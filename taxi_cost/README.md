@@ -1,5 +1,5 @@
-# junior_code
+# sophomore year digital logic circuit system design
 ## written at the beginning
-It's the first time to use github,markdown the same
+code in VHDL
 ## what to be involved
-code written in my junior college year will be uploaded here,with all kinds of subjects I'am attending
+a designed taximemter with some fuctions unimplemented
