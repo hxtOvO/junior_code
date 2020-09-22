@@ -1,0 +1,859 @@
+Classic Timing Analyzer report for Block1
+Thu Jul 16 15:17:21 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'SCLK'
+  7. Clock Setup: 'WCLK'
+  8. Clock Hold: 'WCLK'
+  9. tsu
+ 10. tco
+ 11. tpd
+ 12. th
+ 13. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                        ;
++------------------------------+------------------------------------------+---------------+----------------------------------+---------------------+----------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                ; To                   ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+---------------------+----------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 3.043 ns                         ; SDBZ                ; LCJF:inst5|LCFY1[15] ; --         ; WCLK     ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 18.845 ns                        ; DDJF:inst7|DDFY1[1] ; DATA[1]              ; SCLK       ; --       ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 17.332 ns                        ; SEL[1]              ; DATA[7]              ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; -1.184 ns                        ; SDBZ                ; LCJF:inst5|LCFY1[5]  ; --         ; WCLK     ; 0            ;
+; Clock Setup: 'WCLK'          ; N/A                                      ; None          ; 160.33 MHz ( period = 6.237 ns ) ; LCJS:inst4|BMS[5]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; 0            ;
+; Clock Setup: 'SCLK'          ; N/A                                      ; None          ; 230.63 MHz ( period = 4.336 ns ) ; DDPB:inst2|DDBZ     ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; 0            ;
+; Clock Hold: 'WCLK'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; LCJS:inst4|LCBZ     ; LCJF:inst5|LCFY1[7]  ; WCLK       ; WCLK     ; 14           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                     ;                      ;            ;          ; 14           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+---------------------+----------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C8T144C8        ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; SCLK            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; WCLK            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'SCLK'                                                                                                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+---------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                ; To                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 230.63 MHz ( period = 4.336 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.182 ns                ;
+; N/A                                     ; 230.63 MHz ( period = 4.336 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.182 ns                ;
+; N/A                                     ; 230.63 MHz ( period = 4.336 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.182 ns                ;
+; N/A                                     ; 231.37 MHz ( period = 4.322 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 4.069 ns                ;
+; N/A                                     ; 231.37 MHz ( period = 4.322 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 4.069 ns                ;
+; N/A                                     ; 231.37 MHz ( period = 4.322 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 4.069 ns                ;
+; N/A                                     ; 231.37 MHz ( period = 4.322 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.168 ns                ;
+; N/A                                     ; 231.37 MHz ( period = 4.322 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.168 ns                ;
+; N/A                                     ; 231.37 MHz ( period = 4.322 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.168 ns                ;
+; N/A                                     ; 232.29 MHz ( period = 4.305 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|MS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 4.052 ns                ;
+; N/A                                     ; 232.29 MHz ( period = 4.305 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|MS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 4.052 ns                ;
+; N/A                                     ; 232.29 MHz ( period = 4.305 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|MS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 4.052 ns                ;
+; N/A                                     ; 235.18 MHz ( period = 4.252 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.096 ns                ;
+; N/A                                     ; 235.18 MHz ( period = 4.252 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.096 ns                ;
+; N/A                                     ; 235.18 MHz ( period = 4.252 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.096 ns                ;
+; N/A                                     ; 235.85 MHz ( period = 4.240 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.985 ns                ;
+; N/A                                     ; 235.85 MHz ( period = 4.240 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.985 ns                ;
+; N/A                                     ; 235.85 MHz ( period = 4.240 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.985 ns                ;
+; N/A                                     ; 236.91 MHz ( period = 4.221 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|MS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.968 ns                ;
+; N/A                                     ; 240.91 MHz ( period = 4.151 ns )                    ; DDJS:inst6|FG[0]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.889 ns                ;
+; N/A                                     ; 240.91 MHz ( period = 4.151 ns )                    ; DDJS:inst6|FG[0]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.889 ns                ;
+; N/A                                     ; 240.91 MHz ( period = 4.151 ns )                    ; DDJS:inst6|FG[0]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.889 ns                ;
+; N/A                                     ; 245.76 MHz ( period = 4.069 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 1.904 ns                ;
+; N/A                                     ; 245.76 MHz ( period = 4.069 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 1.904 ns                ;
+; N/A                                     ; 245.76 MHz ( period = 4.069 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 1.904 ns                ;
+; N/A                                     ; 248.02 MHz ( period = 4.032 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.768 ns                ;
+; N/A                                     ; 248.02 MHz ( period = 4.032 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.768 ns                ;
+; N/A                                     ; 248.02 MHz ( period = 4.032 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.768 ns                ;
+; N/A                                     ; 251.57 MHz ( period = 3.975 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.722 ns                ;
+; N/A                                     ; 251.57 MHz ( period = 3.975 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.722 ns                ;
+; N/A                                     ; 251.57 MHz ( period = 3.975 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.722 ns                ;
+; N/A                                     ; 252.65 MHz ( period = 3.958 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|MS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 252.65 MHz ( period = 3.958 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|MS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 252.65 MHz ( period = 3.958 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|MS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 253.16 MHz ( period = 3.950 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.684 ns                ;
+; N/A                                     ; 253.16 MHz ( period = 3.950 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.684 ns                ;
+; N/A                                     ; 253.16 MHz ( period = 3.950 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.684 ns                ;
+; N/A                                     ; 253.68 MHz ( period = 3.942 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 1.788 ns                ;
+; N/A                                     ; 254.45 MHz ( period = 3.930 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.677 ns                ;
+; N/A                                     ; 256.48 MHz ( period = 3.899 ns )                    ; DDJS:inst6|FG[1]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.637 ns                ;
+; N/A                                     ; 256.48 MHz ( period = 3.899 ns )                    ; DDJS:inst6|FG[1]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.637 ns                ;
+; N/A                                     ; 256.48 MHz ( period = 3.899 ns )                    ; DDJS:inst6|FG[1]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.637 ns                ;
+; N/A                                     ; 256.74 MHz ( period = 3.895 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.642 ns                ;
+; N/A                                     ; 256.74 MHz ( period = 3.895 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.642 ns                ;
+; N/A                                     ; 256.74 MHz ( period = 3.895 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.642 ns                ;
+; N/A                                     ; 256.87 MHz ( period = 3.893 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 256.87 MHz ( period = 3.893 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 256.87 MHz ( period = 3.893 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.614 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.614 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.614 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|MS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.625 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|MS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.625 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|MS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.625 ns                ;
+; N/A                                     ; 258.13 MHz ( period = 3.874 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|MS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.621 ns                ;
+; N/A                                     ; 260.15 MHz ( period = 3.844 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 1.690 ns                ;
+; N/A                                     ; 261.10 MHz ( period = 3.830 ns )                    ; DDJS:inst6|MG[0]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.577 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.558 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.558 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.558 ns                ;
+; N/A                                     ; 263.44 MHz ( period = 3.796 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.530 ns                ;
+; N/A                                     ; 263.44 MHz ( period = 3.796 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.530 ns                ;
+; N/A                                     ; 263.44 MHz ( period = 3.796 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.530 ns                ;
+; N/A                                     ; 263.57 MHz ( period = 3.794 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|MS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.541 ns                ;
+; N/A                                     ; 268.24 MHz ( period = 3.728 ns )                    ; DDJS:inst6|FG[2]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.464 ns                ;
+; N/A                                     ; 268.24 MHz ( period = 3.728 ns )                    ; DDJS:inst6|FG[2]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.464 ns                ;
+; N/A                                     ; 268.24 MHz ( period = 3.728 ns )                    ; DDJS:inst6|FG[2]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.464 ns                ;
+; N/A                                     ; 268.67 MHz ( period = 3.722 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.458 ns                ;
+; N/A                                     ; 268.67 MHz ( period = 3.722 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.458 ns                ;
+; N/A                                     ; 268.67 MHz ( period = 3.722 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.458 ns                ;
+; N/A                                     ; 269.03 MHz ( period = 3.717 ns )                    ; DDJS:inst6|FG[3]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.455 ns                ;
+; N/A                                     ; 269.03 MHz ( period = 3.717 ns )                    ; DDJS:inst6|FG[3]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.455 ns                ;
+; N/A                                     ; 269.03 MHz ( period = 3.717 ns )                    ; DDJS:inst6|FG[3]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.455 ns                ;
+; N/A                                     ; 270.71 MHz ( period = 3.694 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.430 ns                ;
+; N/A                                     ; 270.71 MHz ( period = 3.694 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.430 ns                ;
+; N/A                                     ; 270.71 MHz ( period = 3.694 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.430 ns                ;
+; N/A                                     ; 273.30 MHz ( period = 3.659 ns )                    ; DDJS:inst6|FG[0]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.397 ns                ;
+; N/A                                     ; 274.73 MHz ( period = 3.640 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.374 ns                ;
+; N/A                                     ; 274.73 MHz ( period = 3.640 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.376 ns                ;
+; N/A                                     ; 274.73 MHz ( period = 3.640 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.374 ns                ;
+; N/A                                     ; 274.73 MHz ( period = 3.640 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.374 ns                ;
+; N/A                                     ; 275.63 MHz ( period = 3.628 ns )                    ; DDJF:inst7|CNT60[1] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.689 ns                ;
+; N/A                                     ; 276.85 MHz ( period = 3.612 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 276.85 MHz ( period = 3.612 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 276.85 MHz ( period = 3.612 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 277.70 MHz ( period = 3.601 ns )                    ; DDPB:inst2|CNT60[1] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.697 ns                ;
+; N/A                                     ; 278.63 MHz ( period = 3.589 ns )                    ; DDJF:inst7|CNT60[6] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.650 ns                ;
+; N/A                                     ; 278.94 MHz ( period = 3.585 ns )                    ; DDPB:inst2|CNT60[2] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 279.10 MHz ( period = 3.583 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.330 ns                ;
+; N/A                                     ; 279.80 MHz ( period = 3.574 ns )                    ; DDPB:inst2|CNT60[1] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.310 ns                ;
+; N/A                                     ; 280.11 MHz ( period = 3.570 ns )                    ; DDPB:inst2|CNT60[1] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.306 ns                ;
+; N/A                                     ; 280.27 MHz ( period = 3.568 ns )                    ; DDJF:inst7|CNT60[7] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.629 ns                ;
+; N/A                                     ; 281.06 MHz ( period = 3.558 ns )                    ; DDPB:inst2|CNT60[2] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.294 ns                ;
+; N/A                                     ; 281.37 MHz ( period = 3.554 ns )                    ; DDPB:inst2|CNT60[2] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.290 ns                ;
+; N/A                                     ; 282.49 MHz ( period = 3.540 ns )                    ; DDJS:inst6|MS[1]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 282.57 MHz ( period = 3.539 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.275 ns                ;
+; N/A                                     ; 282.57 MHz ( period = 3.539 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.275 ns                ;
+; N/A                                     ; 282.57 MHz ( period = 3.539 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.275 ns                ;
+; N/A                                     ; 283.93 MHz ( period = 3.522 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|MS[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.258 ns                ;
+; N/A                                     ; 283.93 MHz ( period = 3.522 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|MS[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.258 ns                ;
+; N/A                                     ; 283.93 MHz ( period = 3.522 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|MS[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.258 ns                ;
+; N/A                                     ; 285.47 MHz ( period = 3.503 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.250 ns                ;
+; N/A                                     ; 286.86 MHz ( period = 3.486 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.222 ns                ;
+; N/A                                     ; 287.11 MHz ( period = 3.483 ns )                    ; DDJS:inst6|MG[3]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.230 ns                ;
+; N/A                                     ; 287.27 MHz ( period = 3.481 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[15] ; SCLK       ; SCLK     ; None                        ; None                      ; 3.217 ns                ;
+; N/A                                     ; 288.77 MHz ( period = 3.463 ns )                    ; DDPB:inst2|CNT60[0] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.559 ns                ;
+; N/A                                     ; 289.27 MHz ( period = 3.457 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FG[0]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.191 ns                ;
+; N/A                                     ; 289.27 MHz ( period = 3.457 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FG[1]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.191 ns                ;
+; N/A                                     ; 289.27 MHz ( period = 3.457 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FG[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.191 ns                ;
+; N/A                                     ; 289.77 MHz ( period = 3.451 ns )                    ; DDJF:inst7|CNT60[0] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.512 ns                ;
+; N/A                                     ; 290.70 MHz ( period = 3.440 ns )                    ; DDJF:inst7|CNT60[5] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.501 ns                ;
+; N/A                                     ; 290.87 MHz ( period = 3.438 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|MS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.174 ns                ;
+; N/A                                     ; 291.04 MHz ( period = 3.436 ns )                    ; DDPB:inst2|CNT60[0] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.172 ns                ;
+; N/A                                     ; 291.38 MHz ( period = 3.432 ns )                    ; DDPB:inst2|CNT60[0] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.168 ns                ;
+; N/A                                     ; 293.51 MHz ( period = 3.407 ns )                    ; DDJS:inst6|FG[1]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.145 ns                ;
+; N/A                                     ; 293.86 MHz ( period = 3.403 ns )                    ; DDJS:inst6|MG[1]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.150 ns                ;
+; N/A                                     ; 294.55 MHz ( period = 3.395 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[14] ; SCLK       ; SCLK     ; None                        ; None                      ; 3.131 ns                ;
+; N/A                                     ; 295.33 MHz ( period = 3.386 ns )                    ; DDJS:inst6|MS[0]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.122 ns                ;
+; N/A                                     ; 295.42 MHz ( period = 3.385 ns )                    ; DDPB:inst2|CNT60[1] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.121 ns                ;
+; N/A                                     ; 295.51 MHz ( period = 3.384 ns )                    ; DDPB:inst2|CNT60[1] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.120 ns                ;
+; N/A                                     ; 295.60 MHz ( period = 3.383 ns )                    ; DDPB:inst2|CNT60[1] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.119 ns                ;
+; N/A                                     ; 296.82 MHz ( period = 3.369 ns )                    ; DDPB:inst2|CNT60[7] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.465 ns                ;
+; N/A                                     ; 296.82 MHz ( period = 3.369 ns )                    ; DDPB:inst2|CNT60[2] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.105 ns                ;
+; N/A                                     ; 296.91 MHz ( period = 3.368 ns )                    ; DDPB:inst2|CNT60[2] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.104 ns                ;
+; N/A                                     ; 297.00 MHz ( period = 3.367 ns )                    ; DDPB:inst2|CNT60[2] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.103 ns                ;
+; N/A                                     ; 297.97 MHz ( period = 3.356 ns )                    ; DDJS:inst6|FS[0]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.092 ns                ;
+; N/A                                     ; 299.22 MHz ( period = 3.342 ns )                    ; DDPB:inst2|CNT60[7] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.078 ns                ;
+; N/A                                     ; 299.58 MHz ( period = 3.338 ns )                    ; DDPB:inst2|CNT60[7] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.074 ns                ;
+; N/A                                     ; 300.30 MHz ( period = 3.330 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.066 ns                ;
+; N/A                                     ; 301.02 MHz ( period = 3.322 ns )                    ; DDPB:inst2|CNT60[5] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.418 ns                ;
+; N/A                                     ; 302.21 MHz ( period = 3.309 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[13] ; SCLK       ; SCLK     ; None                        ; None                      ; 3.045 ns                ;
+; N/A                                     ; 302.85 MHz ( period = 3.302 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 3.038 ns                ;
+; N/A                                     ; 303.49 MHz ( period = 3.295 ns )                    ; DDPB:inst2|CNT60[5] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.031 ns                ;
+; N/A                                     ; 303.58 MHz ( period = 3.294 ns )                    ; DDPB:inst2|CNT60[3] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.390 ns                ;
+; N/A                                     ; 303.86 MHz ( period = 3.291 ns )                    ; DDPB:inst2|CNT60[5] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.027 ns                ;
+; N/A                                     ; 304.60 MHz ( period = 3.283 ns )                    ; DDPB:inst2|CNT60[6] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.379 ns                ;
+; N/A                                     ; 306.09 MHz ( period = 3.267 ns )                    ; DDPB:inst2|CNT60[3] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 306.47 MHz ( period = 3.263 ns )                    ; DDPB:inst2|CNT60[3] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.999 ns                ;
+; N/A                                     ; 306.84 MHz ( period = 3.259 ns )                    ; DDJF:inst7|CNT60[4] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.320 ns                ;
+; N/A                                     ; 307.13 MHz ( period = 3.256 ns )                    ; DDPB:inst2|CNT60[6] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.992 ns                ;
+; N/A                                     ; 307.50 MHz ( period = 3.252 ns )                    ; DDPB:inst2|CNT60[6] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.988 ns                ;
+; N/A                                     ; 307.98 MHz ( period = 3.247 ns )                    ; DDPB:inst2|CNT60[0] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.983 ns                ;
+; N/A                                     ; 308.07 MHz ( period = 3.246 ns )                    ; DDPB:inst2|CNT60[0] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.982 ns                ;
+; N/A                                     ; 308.17 MHz ( period = 3.245 ns )                    ; DDPB:inst2|CNT60[0] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.981 ns                ;
+; N/A                                     ; 309.02 MHz ( period = 3.236 ns )                    ; DDJS:inst6|FG[2]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.972 ns                ;
+; N/A                                     ; 309.60 MHz ( period = 3.230 ns )                    ; DDJS:inst6|MS[2]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.966 ns                ;
+; N/A                                     ; 310.08 MHz ( period = 3.225 ns )                    ; DDJS:inst6|FG[3]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.963 ns                ;
+; N/A                                     ; 310.27 MHz ( period = 3.223 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[12] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.959 ns                ;
+; N/A                                     ; 312.30 MHz ( period = 3.202 ns )                    ; DDJS:inst6|MS[3]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.938 ns                ;
+; N/A                                     ; 313.19 MHz ( period = 3.193 ns )                    ; FPQ:inst|CNT100[0]  ; FPQ:inst|CNT100[6]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.929 ns                ;
+; N/A                                     ; 315.86 MHz ( period = 3.166 ns )                    ; FPQ:inst|CNT100[1]  ; FPQ:inst|CNT100[6]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.902 ns                ;
+; N/A                                     ; 317.16 MHz ( period = 3.153 ns )                    ; DDJF:inst7|CNT60[3] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.214 ns                ;
+; N/A                                     ; 317.16 MHz ( period = 3.153 ns )                    ; DDPB:inst2|CNT60[7] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.889 ns                ;
+; N/A                                     ; 317.26 MHz ( period = 3.152 ns )                    ; DDPB:inst2|CNT60[7] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.888 ns                ;
+; N/A                                     ; 317.36 MHz ( period = 3.151 ns )                    ; DDPB:inst2|CNT60[7] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.887 ns                ;
+; N/A                                     ; 317.76 MHz ( period = 3.147 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.883 ns                ;
+; N/A                                     ; 318.78 MHz ( period = 3.137 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[11] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.873 ns                ;
+; N/A                                     ; 319.18 MHz ( period = 3.133 ns )                    ; DDJF:inst7|DDFY1[0] ; DDJF:inst7|DDFY1[15] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.869 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; DDPB:inst2|CNT60[5] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.842 ns                ;
+; N/A                                     ; 322.06 MHz ( period = 3.105 ns )                    ; DDPB:inst2|CNT60[5] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.841 ns                ;
+; N/A                                     ; 322.16 MHz ( period = 3.104 ns )                    ; DDPB:inst2|CNT60[5] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.840 ns                ;
+; N/A                                     ; 323.52 MHz ( period = 3.091 ns )                    ; DDJF:inst7|CNT60[2] ; DDJF:inst7|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 1.152 ns                ;
+; N/A                                     ; 324.89 MHz ( period = 3.078 ns )                    ; DDPB:inst2|CNT60[3] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.814 ns                ;
+; N/A                                     ; 324.99 MHz ( period = 3.077 ns )                    ; DDPB:inst2|CNT60[3] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.813 ns                ;
+; N/A                                     ; 325.10 MHz ( period = 3.076 ns )                    ; DDPB:inst2|CNT60[3] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.812 ns                ;
+; N/A                                     ; 326.05 MHz ( period = 3.067 ns )                    ; DDPB:inst2|CNT60[6] ; DDPB:inst2|CNT60[0]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 326.16 MHz ( period = 3.066 ns )                    ; DDPB:inst2|CNT60[6] ; DDPB:inst2|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.802 ns                ;
+; N/A                                     ; 326.26 MHz ( period = 3.065 ns )                    ; DDPB:inst2|CNT60[6] ; DDPB:inst2|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.801 ns                ;
+; N/A                                     ; 327.12 MHz ( period = 3.057 ns )                    ; DDJF:inst7|DDFY1[2] ; DDJF:inst7|DDFY1[15] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.793 ns                ;
+; N/A                                     ; 327.33 MHz ( period = 3.055 ns )                    ; DDJS:inst6|FS[1]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.791 ns                ;
+; N/A                                     ; 327.76 MHz ( period = 3.051 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[10] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.787 ns                ;
+; N/A                                     ; 328.19 MHz ( period = 3.047 ns )                    ; DDJF:inst7|DDFY1[0] ; DDJF:inst7|DDFY1[14] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.783 ns                ;
+; N/A                                     ; 328.19 MHz ( period = 3.047 ns )                    ; DDJS:inst6|MG[2]    ; DDJS:inst6|FS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 2.783 ns                ;
+; N/A                                     ; 328.41 MHz ( period = 3.045 ns )                    ; DDJF:inst7|CNT60[0] ; DDJF:inst7|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.781 ns                ;
+; N/A                                     ; 329.16 MHz ( period = 3.038 ns )                    ; FPQ:inst|CNT100[2]  ; FPQ:inst|CNT100[6]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.774 ns                ;
+; N/A                                     ; 331.02 MHz ( period = 3.021 ns )                    ; DDJF:inst7|DDFY1[3] ; DDJF:inst7|DDFY1[15] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.757 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; FPQ:inst|CNT100[0]  ; FPQ:inst|CNT100[5]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 333.89 MHz ( period = 2.995 ns )                    ; FPQ:inst|CNT100[3]  ; FPQ:inst|CNT100[6]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; 334.56 MHz ( period = 2.989 ns )                    ; FPQ:inst|CNT100[1]  ; FPQ:inst|CNT100[5]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.725 ns                ;
+; N/A                                     ; 336.59 MHz ( period = 2.971 ns )                    ; DDJF:inst7|DDFY1[2] ; DDJF:inst7|DDFY1[14] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.707 ns                ;
+; N/A                                     ; 337.27 MHz ( period = 2.965 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[9]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.701 ns                ;
+; N/A                                     ; 337.50 MHz ( period = 2.963 ns )                    ; DDJF:inst7|CNT60[1] ; DDJF:inst7|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.699 ns                ;
+; N/A                                     ; 337.72 MHz ( period = 2.961 ns )                    ; DDJF:inst7|DDFY1[0] ; DDJF:inst7|DDFY1[13] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.697 ns                ;
+; N/A                                     ; 338.29 MHz ( period = 2.956 ns )                    ; DDJF:inst7|CNT60[0] ; DDJF:inst7|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 339.33 MHz ( period = 2.947 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MS[3]     ; SCLK       ; SCLK     ; None                        ; None                      ; 0.793 ns                ;
+; N/A                                     ; 340.60 MHz ( period = 2.936 ns )                    ; DDPB:inst2|DDBZ     ; DDJS:inst6|MG[2]     ; SCLK       ; SCLK     ; None                        ; None                      ; 0.782 ns                ;
+; N/A                                     ; 340.72 MHz ( period = 2.935 ns )                    ; DDJF:inst7|DDFY1[3] ; DDJF:inst7|DDFY1[14] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.671 ns                ;
+; N/A                                     ; 342.23 MHz ( period = 2.922 ns )                    ; DDPB:inst2|CNT60[4] ; DDPB:inst2|T60S      ; SCLK       ; SCLK     ; None                        ; None                      ; 2.018 ns                ;
+; N/A                                     ; 343.88 MHz ( period = 2.908 ns )                    ; FPQ:inst|CNT100[4]  ; FPQ:inst|CNT100[6]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.644 ns                ;
+; N/A                                     ; 345.42 MHz ( period = 2.895 ns )                    ; DDPB:inst2|CNT60[4] ; DDPB:inst2|CNT60[4]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 345.90 MHz ( period = 2.891 ns )                    ; DDPB:inst2|CNT60[4] ; DDPB:inst2|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 346.50 MHz ( period = 2.886 ns )                    ; DDJF:inst7|DDFY1[4] ; DDJF:inst7|DDFY1[15] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.622 ns                ;
+; N/A                                     ; 346.50 MHz ( period = 2.886 ns )                    ; DDJF:inst7|CNT60[1] ; DDJF:inst7|CNT60[3]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.622 ns                ;
+; N/A                                     ; 346.50 MHz ( period = 2.886 ns )                    ; DDJF:inst7|CNT60[1] ; DDJF:inst7|CNT60[5]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.622 ns                ;
+; N/A                                     ; 346.62 MHz ( period = 2.885 ns )                    ; DDJF:inst7|DDFY1[2] ; DDJF:inst7|DDFY1[13] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.621 ns                ;
+; N/A                                     ; 347.34 MHz ( period = 2.879 ns )                    ; DDJF:inst7|DDFY1[1] ; DDJF:inst7|DDFY1[8]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.615 ns                ;
+; N/A                                     ; 347.83 MHz ( period = 2.875 ns )                    ; DDJF:inst7|DDFY1[0] ; DDJF:inst7|DDFY1[12] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.611 ns                ;
+; N/A                                     ; 348.31 MHz ( period = 2.871 ns )                    ; DDJF:inst7|CNT60[0] ; DDJF:inst7|CNT60[2]  ; SCLK       ; SCLK     ; None                        ; None                      ; 2.607 ns                ;
+; N/A                                     ; 349.53 MHz ( period = 2.861 ns )                    ; FPQ:inst|CNT100[2]  ; FPQ:inst|CNT100[5]   ; SCLK       ; SCLK     ; None                        ; None                      ; 2.597 ns                ;
+; N/A                                     ; 350.88 MHz ( period = 2.850 ns )                    ; DDJF:inst7|DDFY1[5] ; DDJF:inst7|DDFY1[15] ; SCLK       ; SCLK     ; None                        ; None                      ; 2.586 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                     ;                      ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'WCLK'                                                                                                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+---------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                ; To                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 160.33 MHz ( period = 6.237 ns )                    ; LCJS:inst4|BMS[5]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.370 ns                ;
+; N/A                                     ; 161.84 MHz ( period = 6.179 ns )                    ; LCJS:inst4|BMS[11]  ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.312 ns                ;
+; N/A                                     ; 163.93 MHz ( period = 6.100 ns )                    ; LCJS:inst4|BMS[8]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.233 ns                ;
+; N/A                                     ; 163.96 MHz ( period = 6.099 ns )                    ; LCJS:inst4|BMS[4]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.232 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; LCJS:inst4|BMS[10]  ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.128 ns                ;
+; N/A                                     ; 167.31 MHz ( period = 5.977 ns )                    ; LCJS:inst4|BMS[9]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.110 ns                ;
+; N/A                                     ; 168.89 MHz ( period = 5.921 ns )                    ; LCJS:inst4|BMS[6]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.054 ns                ;
+; N/A                                     ; 169.95 MHz ( period = 5.884 ns )                    ; LCJS:inst4|BMS[2]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.017 ns                ;
+; N/A                                     ; 170.27 MHz ( period = 5.873 ns )                    ; LCJS:inst4|BMS[3]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 6.006 ns                ;
+; N/A                                     ; 172.65 MHz ( period = 5.792 ns )                    ; LCJS:inst4|BMS[7]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 5.925 ns                ;
+; N/A                                     ; 172.95 MHz ( period = 5.782 ns )                    ; LCJS:inst4|BMS[1]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 5.915 ns                ;
+; N/A                                     ; 174.76 MHz ( period = 5.722 ns )                    ; LCJS:inst4|BMS[14]  ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 5.855 ns                ;
+; N/A                                     ; 177.78 MHz ( period = 5.625 ns )                    ; LCJS:inst4|BMS[15]  ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 5.758 ns                ;
+; N/A                                     ; 183.39 MHz ( period = 5.453 ns )                    ; LCJS:inst4|BMS[12]  ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 5.586 ns                ;
+; N/A                                     ; 184.60 MHz ( period = 5.417 ns )                    ; LCJS:inst4|BMS[13]  ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 5.550 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 215.15 MHz ( period = 4.648 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.404 ns                ;
+; N/A                                     ; 216.92 MHz ( period = 4.610 ns )                    ; LCJS:inst4|BMS[14]  ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.328 ns                ;
+; N/A                                     ; 221.58 MHz ( period = 4.513 ns )                    ; LCJS:inst4|BMS[15]  ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.231 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 227.38 MHz ( period = 4.398 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 228.57 MHz ( period = 4.375 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|JFBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.528 ns                ;
+; N/A                                     ; 230.36 MHz ( period = 4.341 ns )                    ; LCJS:inst4|BMS[12]  ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.059 ns                ;
+; N/A                                     ; 230.68 MHz ( period = 4.335 ns )                    ; LCJS:inst4|BMS[4]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.053 ns                ;
+; N/A                                     ; 231.00 MHz ( period = 4.329 ns )                    ; LCJS:inst4|BMS[3]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.047 ns                ;
+; N/A                                     ; 232.29 MHz ( period = 4.305 ns )                    ; LCJS:inst4|BMS[13]  ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.023 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 233.97 MHz ( period = 4.274 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 4.012 ns                ;
+; N/A                                     ; 236.57 MHz ( period = 4.227 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.983 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 240.33 MHz ( period = 4.161 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 241.49 MHz ( period = 4.141 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.897 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 243.31 MHz ( period = 4.110 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.850 ns                ;
+; N/A                                     ; 244.62 MHz ( period = 4.088 ns )                    ; LCJS:inst4|BMS[2]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.806 ns                ;
+; N/A                                     ; 246.61 MHz ( period = 4.055 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.811 ns                ;
+; N/A                                     ; 248.51 MHz ( period = 4.024 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.762 ns                ;
+; N/A                                     ; 251.95 MHz ( period = 3.969 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.725 ns                ;
+; N/A                                     ; 255.04 MHz ( period = 3.921 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.659 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 255.75 MHz ( period = 3.910 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 257.53 MHz ( period = 3.883 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.639 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; LCJS:inst4|BMS[10]  ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 263.37 MHz ( period = 3.797 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.553 ns                ;
+; N/A                                     ; 264.06 MHz ( period = 3.787 ns )                    ; LCJS:inst4|MS[6]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.525 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[1]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[11]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[10]   ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 267.67 MHz ( period = 3.736 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.474 ns                ;
+; N/A                                     ; 268.82 MHz ( period = 3.720 ns )                    ; LCJS:inst4|MS[4]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.458 ns                ;
+; N/A                                     ; 269.47 MHz ( period = 3.711 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[9]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.467 ns                ;
+; N/A                                     ; 282.81 MHz ( period = 3.536 ns )                    ; LCJS:inst4|MS[5]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 284.01 MHz ( period = 3.521 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[8]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.277 ns                ;
+; N/A                                     ; 286.94 MHz ( period = 3.485 ns )                    ; LCJS:inst4|BMS[6]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.203 ns                ;
+; N/A                                     ; 291.12 MHz ( period = 3.435 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[7]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.191 ns                ;
+; N/A                                     ; 293.17 MHz ( period = 3.411 ns )                    ; LCJS:inst4|BMS[9]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.129 ns                ;
+; N/A                                     ; 296.91 MHz ( period = 3.368 ns )                    ; LCJS:inst4|MS[7]    ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 3.106 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[6]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.105 ns                ;
+; N/A                                     ; 306.47 MHz ( period = 3.263 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[5]    ; WCLK       ; WCLK     ; None                        ; None                      ; 3.019 ns                ;
+; N/A                                     ; 311.53 MHz ( period = 3.210 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|MS[6]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.946 ns                ;
+; N/A                                     ; 314.37 MHz ( period = 3.181 ns )                    ; LCJS:inst4|BMS[5]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 2.899 ns                ;
+; N/A                                     ; 314.76 MHz ( period = 3.177 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[4]    ; WCLK       ; WCLK     ; None                        ; None                      ; 2.933 ns                ;
+; N/A                                     ; 315.96 MHz ( period = 3.165 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|MS[6]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.901 ns                ;
+; N/A                                     ; 318.27 MHz ( period = 3.142 ns )                    ; LCJS:inst4|BMS[1]   ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.878 ns                ;
+; N/A                                     ; 323.52 MHz ( period = 3.091 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[3]    ; WCLK       ; WCLK     ; None                        ; None                      ; 2.847 ns                ;
+; N/A                                     ; 323.52 MHz ( period = 3.091 ns )                    ; LCJS:inst4|BMS[7]   ; LCJS:inst4|LCBZ      ; WCLK       ; WCLK     ; None                        ; None                      ; 2.809 ns                ;
+; N/A                                     ; 326.26 MHz ( period = 3.065 ns )                    ; LCJS:inst4|BMS[2]   ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.801 ns                ;
+; N/A                                     ; 326.69 MHz ( period = 3.061 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|MS[2]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 327.23 MHz ( period = 3.056 ns )                    ; LCJS:inst4|BMS[1]   ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.792 ns                ;
+; N/A                                     ; 327.65 MHz ( period = 3.052 ns )                    ; LCJF:inst5|LCFY1[2] ; LCJF:inst5|LCFY1[15] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.788 ns                ;
+; N/A                                     ; 330.47 MHz ( period = 3.026 ns )                    ; LCJS:inst4|MS[2]    ; LCJS:inst4|MS[6]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.762 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; LCJS:inst4|MS[1]    ; LCJS:inst4|MS[2]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 332.78 MHz ( period = 3.005 ns )                    ; LCJS:inst4|BMS[0]   ; LCJS:inst4|BMS[2]    ; WCLK       ; WCLK     ; None                        ; None                      ; 2.761 ns                ;
+; N/A                                     ; 335.57 MHz ( period = 2.980 ns )                    ; LCJS:inst4|BMS[3]   ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.716 ns                ;
+; N/A                                     ; 335.68 MHz ( period = 2.979 ns )                    ; LCJS:inst4|BMS[2]   ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.715 ns                ;
+; N/A                                     ; 336.70 MHz ( period = 2.970 ns )                    ; LCJS:inst4|BMS[1]   ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.706 ns                ;
+; N/A                                     ; 336.70 MHz ( period = 2.970 ns )                    ; LCJF:inst5|LCFY1[3] ; LCJF:inst5|LCFY1[15] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.706 ns                ;
+; N/A                                     ; 336.81 MHz ( period = 2.969 ns )                    ; LCJS:inst4|MS[0]    ; LCJS:inst4|MS[5]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.705 ns                ;
+; N/A                                     ; 337.15 MHz ( period = 2.966 ns )                    ; LCJF:inst5|LCFY1[2] ; LCJF:inst5|LCFY1[14] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.702 ns                ;
+; N/A                                     ; 337.61 MHz ( period = 2.962 ns )                    ; LCJS:inst4|MS[3]    ; LCJS:inst4|MS[6]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.698 ns                ;
+; N/A                                     ; 339.67 MHz ( period = 2.944 ns )                    ; LCJS:inst4|BMS[4]   ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.680 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|MS[1]    ; LCJS:inst4|MS[5]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.660 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[3]   ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.630 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[2]   ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.629 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJF:inst5|LCFY1[4] ; LCJF:inst5|LCFY1[15] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.621 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[1]   ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.620 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJF:inst5|LCFY1[3] ; LCJF:inst5|LCFY1[14] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.620 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJF:inst5|LCFY1[2] ; LCJF:inst5|LCFY1[13] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.616 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[4]   ; LCJS:inst4|BMS[14]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.594 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJF:inst5|LCFY1[5] ; LCJF:inst5|LCFY1[15] ; WCLK       ; WCLK     ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[5]   ; LCJS:inst4|BMS[15]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.545 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[3]   ; LCJS:inst4|BMS[13]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.544 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|BMS[2]   ; LCJS:inst4|BMS[12]   ; WCLK       ; WCLK     ; None                        ; None                      ; 2.543 ns                ;
+; N/A                                     ; Restricted to 340.02 MHz ( period = 2.941 ns )      ; LCJS:inst4|MS[4]    ; LCJS:inst4|MS[6]     ; WCLK       ; WCLK     ; None                        ; None                      ; 2.541 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                     ;                      ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'WCLK'                                                                                                                                                                             ;
++------------------------------------------+-----------------+----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To                   ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[7]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[6]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[5]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[4]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[3]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[2]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[15] ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[14] ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[13] ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[12] ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[11] ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[10] ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[9]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCJS:inst4|LCBZ ; LCJF:inst5|LCFY1[8]  ; WCLK       ; WCLK     ; None                       ; None                       ; 1.696 ns                 ;
++------------------------------------------+-----------------+----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------+
+; tsu                                                                        ;
++-------+--------------+------------+------+----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                   ; To Clock ;
++-------+--------------+------------+------+----------------------+----------+
+; N/A   ; None         ; 3.043 ns   ; SDBZ ; LCJF:inst5|LCFY1[15] ; WCLK     ;
+; N/A   ; None         ; 2.957 ns   ; SDBZ ; LCJF:inst5|LCFY1[14] ; WCLK     ;
+; N/A   ; None         ; 2.871 ns   ; SDBZ ; LCJF:inst5|LCFY1[13] ; WCLK     ;
+; N/A   ; None         ; 2.785 ns   ; SDBZ ; LCJF:inst5|LCFY1[12] ; WCLK     ;
+; N/A   ; None         ; 2.699 ns   ; SDBZ ; LCJF:inst5|LCFY1[11] ; WCLK     ;
+; N/A   ; None         ; 2.613 ns   ; SDBZ ; LCJF:inst5|LCFY1[10] ; WCLK     ;
+; N/A   ; None         ; 2.423 ns   ; SDBZ ; LCJF:inst5|LCFY1[9]  ; WCLK     ;
+; N/A   ; None         ; 2.337 ns   ; SDBZ ; LCJF:inst5|LCFY1[8]  ; WCLK     ;
+; N/A   ; None         ; 2.251 ns   ; SDBZ ; LCJF:inst5|LCFY1[7]  ; WCLK     ;
+; N/A   ; None         ; 2.165 ns   ; SDBZ ; LCJF:inst5|LCFY1[6]  ; WCLK     ;
+; N/A   ; None         ; 2.079 ns   ; SDBZ ; LCJF:inst5|LCFY1[5]  ; WCLK     ;
+; N/A   ; None         ; 1.993 ns   ; SDBZ ; LCJF:inst5|LCFY1[4]  ; WCLK     ;
+; N/A   ; None         ; 1.517 ns   ; SDBZ ; LCJF:inst5|LCFY1[3]  ; WCLK     ;
++-------+--------------+------------+------+----------------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+----------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                 ; To      ; From Clock ;
++-------+--------------+------------+----------------------+---------+------------+
+; N/A   ; None         ; 18.845 ns  ; DDJF:inst7|DDFY1[1]  ; DATA[1] ; SCLK       ;
+; N/A   ; None         ; 18.703 ns  ; DDJF:inst7|DDFY1[0]  ; DATA[0] ; SCLK       ;
+; N/A   ; None         ; 18.622 ns  ; DDJF:inst7|DDFY1[3]  ; DATA[3] ; SCLK       ;
+; N/A   ; None         ; 18.612 ns  ; DDJF:inst7|DDFY1[7]  ; DATA[7] ; SCLK       ;
+; N/A   ; None         ; 18.529 ns  ; DDJF:inst7|DDFY1[4]  ; DATA[4] ; SCLK       ;
+; N/A   ; None         ; 18.361 ns  ; DDJF:inst7|DDFY1[9]  ; DATA[1] ; SCLK       ;
+; N/A   ; None         ; 17.925 ns  ; DDJF:inst7|DDFY1[5]  ; DATA[5] ; SCLK       ;
+; N/A   ; None         ; 17.839 ns  ; DDJF:inst7|DDFY1[2]  ; DATA[2] ; SCLK       ;
+; N/A   ; None         ; 17.693 ns  ; DDJF:inst7|DDFY1[6]  ; DATA[6] ; SCLK       ;
+; N/A   ; None         ; 17.502 ns  ; DDJF:inst7|DDFY1[13] ; DATA[5] ; SCLK       ;
+; N/A   ; None         ; 17.451 ns  ; DDJF:inst7|DDFY1[15] ; DATA[7] ; SCLK       ;
+; N/A   ; None         ; 17.373 ns  ; DDJS:inst6|FS[3]     ; DATA[7] ; SCLK       ;
+; N/A   ; None         ; 17.307 ns  ; DDJF:inst7|DDFY1[8]  ; DATA[0] ; SCLK       ;
+; N/A   ; None         ; 17.249 ns  ; DDJF:inst7|DDFY1[12] ; DATA[4] ; SCLK       ;
+; N/A   ; None         ; 17.148 ns  ; DDJS:inst6|MS[3]     ; DATA[7] ; SCLK       ;
+; N/A   ; None         ; 17.146 ns  ; DDJF:inst7|DDFY1[11] ; DATA[3] ; SCLK       ;
+; N/A   ; None         ; 17.079 ns  ; DDJF:inst7|DDFY1[10] ; DATA[2] ; SCLK       ;
+; N/A   ; None         ; 16.786 ns  ; DDJS:inst6|FS[0]     ; DATA[4] ; SCLK       ;
+; N/A   ; None         ; 16.755 ns  ; DDJF:inst7|DDFY1[14] ; DATA[6] ; SCLK       ;
+; N/A   ; None         ; 16.690 ns  ; LCJF:inst5|LCFY1[4]  ; DATA[4] ; WCLK       ;
+; N/A   ; None         ; 16.449 ns  ; LCJF:inst5|LCFY1[15] ; DATA[7] ; WCLK       ;
+; N/A   ; None         ; 16.407 ns  ; DDJS:inst6|FS[2]     ; DATA[6] ; SCLK       ;
+; N/A   ; None         ; 16.397 ns  ; LCJF:inst5|LCFY1[8]  ; DATA[0] ; WCLK       ;
+; N/A   ; None         ; 16.356 ns  ; DDJS:inst6|MG[3]     ; DATA[3] ; SCLK       ;
+; N/A   ; None         ; 16.299 ns  ; LCJF:inst5|LCFY1[12] ; DATA[4] ; WCLK       ;
+; N/A   ; None         ; 16.265 ns  ; DDJS:inst6|MS[0]     ; DATA[4] ; SCLK       ;
+; N/A   ; None         ; 16.149 ns  ; LCJF:inst5|LCFY1[7]  ; DATA[7] ; WCLK       ;
+; N/A   ; None         ; 16.036 ns  ; DDJS:inst6|MG[2]     ; DATA[2] ; SCLK       ;
+; N/A   ; None         ; 15.999 ns  ; DDJS:inst6|MS[2]     ; DATA[6] ; SCLK       ;
+; N/A   ; None         ; 15.993 ns  ; LCJF:inst5|LCFY1[9]  ; DATA[1] ; WCLK       ;
+; N/A   ; None         ; 15.916 ns  ; DDJS:inst6|FG[2]     ; DATA[2] ; SCLK       ;
+; N/A   ; None         ; 15.545 ns  ; LCJF:inst5|LCFY1[13] ; DATA[5] ; WCLK       ;
+; N/A   ; None         ; 15.510 ns  ; LCJF:inst5|LCFY1[11] ; DATA[3] ; WCLK       ;
+; N/A   ; None         ; 15.383 ns  ; DDJS:inst6|FG[3]     ; DATA[3] ; SCLK       ;
+; N/A   ; None         ; 15.320 ns  ; LCJF:inst5|LCFY1[10] ; DATA[2] ; WCLK       ;
+; N/A   ; None         ; 15.315 ns  ; DDJS:inst6|FS[1]     ; DATA[5] ; SCLK       ;
+; N/A   ; None         ; 15.300 ns  ; LCJF:inst5|LCFY1[14] ; DATA[6] ; WCLK       ;
+; N/A   ; None         ; 15.255 ns  ; DDJS:inst6|MS[1]     ; DATA[5] ; SCLK       ;
+; N/A   ; None         ; 15.220 ns  ; LCJF:inst5|LCFY1[2]  ; DATA[2] ; WCLK       ;
+; N/A   ; None         ; 15.115 ns  ; LCJF:inst5|LCFY1[3]  ; DATA[3] ; WCLK       ;
+; N/A   ; None         ; 15.075 ns  ; LCJF:inst5|LCFY1[5]  ; DATA[5] ; WCLK       ;
+; N/A   ; None         ; 15.046 ns  ; LCJF:inst5|LCFY1[6]  ; DATA[6] ; WCLK       ;
+; N/A   ; None         ; 14.442 ns  ; LCJS:inst4|BMS[4]    ; DATA[4] ; WCLK       ;
+; N/A   ; None         ; 14.202 ns  ; LCJS:inst4|BMS[3]    ; DATA[3] ; WCLK       ;
+; N/A   ; None         ; 14.102 ns  ; DDJS:inst6|MG[1]     ; DATA[1] ; SCLK       ;
+; N/A   ; None         ; 14.010 ns  ; DDJS:inst6|MG[0]     ; DATA[0] ; SCLK       ;
+; N/A   ; None         ; 13.885 ns  ; DDJS:inst6|FG[1]     ; DATA[1] ; SCLK       ;
+; N/A   ; None         ; 13.389 ns  ; LCJS:inst4|BMS[1]    ; DATA[1] ; WCLK       ;
+; N/A   ; None         ; 13.373 ns  ; LCJS:inst4|BMS[5]    ; DATA[5] ; WCLK       ;
+; N/A   ; None         ; 13.225 ns  ; DDJS:inst6|FG[0]     ; DATA[0] ; SCLK       ;
+; N/A   ; None         ; 12.860 ns  ; LCJS:inst4|BMS[7]    ; DATA[7] ; WCLK       ;
+; N/A   ; None         ; 12.680 ns  ; LCJS:inst4|BMS[12]   ; DATA[4] ; WCLK       ;
+; N/A   ; None         ; 12.669 ns  ; LCJS:inst4|BMS[9]    ; DATA[1] ; WCLK       ;
+; N/A   ; None         ; 12.651 ns  ; LCJS:inst4|BMS[0]    ; DATA[0] ; WCLK       ;
+; N/A   ; None         ; 12.219 ns  ; LCJS:inst4|BMS[2]    ; DATA[2] ; WCLK       ;
+; N/A   ; None         ; 12.150 ns  ; LCJS:inst4|BMS[6]    ; DATA[6] ; WCLK       ;
+; N/A   ; None         ; 12.087 ns  ; LCJS:inst4|BMS[8]    ; DATA[0] ; WCLK       ;
+; N/A   ; None         ; 11.991 ns  ; LCJS:inst4|BMS[11]   ; DATA[3] ; WCLK       ;
+; N/A   ; None         ; 11.438 ns  ; LCJS:inst4|BMS[15]   ; DATA[7] ; WCLK       ;
+; N/A   ; None         ; 11.121 ns  ; LCJS:inst4|BMS[10]   ; DATA[2] ; WCLK       ;
+; N/A   ; None         ; 11.032 ns  ; LCJS:inst4|BMS[13]   ; DATA[5] ; WCLK       ;
+; N/A   ; None         ; 10.707 ns  ; LCJS:inst4|BMS[14]   ; DATA[6] ; WCLK       ;
++-------+--------------+------------+----------------------+---------+------------+
+
+
++----------------------------------------------------------------+
+; tpd                                                            ;
++-------+-------------------+-----------------+--------+---------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To      ;
++-------+-------------------+-----------------+--------+---------+
+; N/A   ; None              ; 17.332 ns       ; SEL[1] ; DATA[7] ;
+; N/A   ; None              ; 16.721 ns       ; SEL[0] ; DATA[7] ;
+; N/A   ; None              ; 16.616 ns       ; SEL[1] ; DATA[1] ;
+; N/A   ; None              ; 16.392 ns       ; SEL[2] ; DATA[1] ;
+; N/A   ; None              ; 16.379 ns       ; SEL[0] ; DATA[1] ;
+; N/A   ; None              ; 16.296 ns       ; SEL[1] ; DATA[4] ;
+; N/A   ; None              ; 16.285 ns       ; SEL[1] ; DATA[6] ;
+; N/A   ; None              ; 16.221 ns       ; SEL[1] ; DATA[2] ;
+; N/A   ; None              ; 16.163 ns       ; SEL[1] ; DATA[0] ;
+; N/A   ; None              ; 15.935 ns       ; SEL[2] ; DATA[0] ;
+; N/A   ; None              ; 15.926 ns       ; SEL[0] ; DATA[0] ;
+; N/A   ; None              ; 15.926 ns       ; SEL[0] ; DATA[4] ;
+; N/A   ; None              ; 15.882 ns       ; SEL[0] ; DATA[3] ;
+; N/A   ; None              ; 15.705 ns       ; SEL[1] ; DATA[3] ;
+; N/A   ; None              ; 15.680 ns       ; SEL[0] ; DATA[6] ;
+; N/A   ; None              ; 15.608 ns       ; SEL[0] ; DATA[2] ;
+; N/A   ; None              ; 15.018 ns       ; SEL[1] ; DATA[5] ;
+; N/A   ; None              ; 14.861 ns       ; SEL[0] ; DATA[5] ;
+; N/A   ; None              ; 14.406 ns       ; SEL[2] ; DATA[7] ;
+; N/A   ; None              ; 14.060 ns       ; SEL[2] ; DATA[4] ;
+; N/A   ; None              ; 13.677 ns       ; SEL[2] ; DATA[2] ;
+; N/A   ; None              ; 13.307 ns       ; SEL[2] ; DATA[3] ;
+; N/A   ; None              ; 13.292 ns       ; SEL[2] ; DATA[5] ;
+; N/A   ; None              ; 12.813 ns       ; SEL[2] ; DATA[6] ;
++-------+-------------------+-----------------+--------+---------+
+
+
++----------------------------------------------------------------------------------+
+; th                                                                               ;
++---------------+-------------+-----------+------+----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                   ; To Clock ;
++---------------+-------------+-----------+------+----------------------+----------+
+; N/A           ; None        ; -1.184 ns ; SDBZ ; LCJF:inst5|LCFY1[5]  ; WCLK     ;
+; N/A           ; None        ; -1.250 ns ; SDBZ ; LCJF:inst5|LCFY1[4]  ; WCLK     ;
+; N/A           ; None        ; -1.251 ns ; SDBZ ; LCJF:inst5|LCFY1[3]  ; WCLK     ;
+; N/A           ; None        ; -1.671 ns ; SDBZ ; LCJF:inst5|LCFY1[6]  ; WCLK     ;
+; N/A           ; None        ; -1.757 ns ; SDBZ ; LCJF:inst5|LCFY1[7]  ; WCLK     ;
+; N/A           ; None        ; -1.843 ns ; SDBZ ; LCJF:inst5|LCFY1[8]  ; WCLK     ;
+; N/A           ; None        ; -1.929 ns ; SDBZ ; LCJF:inst5|LCFY1[9]  ; WCLK     ;
+; N/A           ; None        ; -2.119 ns ; SDBZ ; LCJF:inst5|LCFY1[10] ; WCLK     ;
+; N/A           ; None        ; -2.205 ns ; SDBZ ; LCJF:inst5|LCFY1[11] ; WCLK     ;
+; N/A           ; None        ; -2.291 ns ; SDBZ ; LCJF:inst5|LCFY1[12] ; WCLK     ;
+; N/A           ; None        ; -2.377 ns ; SDBZ ; LCJF:inst5|LCFY1[13] ; WCLK     ;
+; N/A           ; None        ; -2.463 ns ; SDBZ ; LCJF:inst5|LCFY1[14] ; WCLK     ;
+; N/A           ; None        ; -2.549 ns ; SDBZ ; LCJF:inst5|LCFY1[15] ; WCLK     ;
++---------------+-------------+-----------+------+----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Jul 16 15:17:20 2020
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Block1 -c Block1 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "SCLK" is an undefined clock
+    Info: Assuming node "WCLK" is an undefined clock
+Warning: Found 4 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "LCJS:inst4|JFBZ" as buffer
+    Info: Detected ripple clock "FPQ:inst|CLK1" as buffer
+    Info: Detected ripple clock "DDPB:inst2|T60S" as buffer
+    Info: Detected ripple clock "DDJF:inst7|T60S" as buffer
+Info: Clock "SCLK" has Internal fmax of 230.63 MHz between source register "DDPB:inst2|DDBZ" and destination register "DDJS:inst6|FS[2]" (period= 4.336 ns)
+    Info: + Longest register to register delay is 2.182 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y7_N1; Fanout = 48; REG Node = 'DDPB:inst2|DDBZ'
+        Info: 2: + IC(0.479 ns) + CELL(0.206 ns) = 0.685 ns; Loc. = LCCOMB_X22_Y7_N24; Fanout = 4; COMB Node = 'DDJS:inst6|FS[3]~16'
+        Info: 3: + IC(0.642 ns) + CELL(0.855 ns) = 2.182 ns; Loc. = LCFF_X23_Y7_N1; Fanout = 4; REG Node = 'DDJS:inst6|FS[2]'
+        Info: Total cell delay = 1.061 ns ( 48.63 % )
+        Info: Total interconnect delay = 1.121 ns ( 51.37 % )
+    Info: - Smallest clock skew is -1.890 ns
+        Info: + Shortest clock path from clock "SCLK" to destination register is 6.726 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.935 ns) = 0.935 ns; Loc. = PIN_104; Fanout = 8; CLK Node = 'SCLK'
+            Info: 2: + IC(1.344 ns) + CELL(0.970 ns) = 3.249 ns; Loc. = LCFF_X33_Y13_N21; Fanout = 4; REG Node = 'FPQ:inst|CLK1'
+            Info: 3: + IC(1.913 ns) + CELL(0.000 ns) = 5.162 ns; Loc. = CLKCTRL_G5; Fanout = 32; COMB Node = 'FPQ:inst|CLK1~clkctrl'
+            Info: 4: + IC(0.898 ns) + CELL(0.666 ns) = 6.726 ns; Loc. = LCFF_X23_Y7_N1; Fanout = 4; REG Node = 'DDJS:inst6|FS[2]'
+            Info: Total cell delay = 2.571 ns ( 38.22 % )
+            Info: Total interconnect delay = 4.155 ns ( 61.78 % )
+        Info: - Longest clock path from clock "SCLK" to source register is 8.616 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.935 ns) = 0.935 ns; Loc. = PIN_104; Fanout = 8; CLK Node = 'SCLK'
+            Info: 2: + IC(1.344 ns) + CELL(0.970 ns) = 3.249 ns; Loc. = LCFF_X33_Y13_N21; Fanout = 4; REG Node = 'FPQ:inst|CLK1'
+            Info: 3: + IC(2.170 ns) + CELL(0.970 ns) = 6.389 ns; Loc. = LCFF_X23_Y12_N13; Fanout = 9; REG Node = 'DDPB:inst2|T60S'
+            Info: 4: + IC(1.561 ns) + CELL(0.666 ns) = 8.616 ns; Loc. = LCFF_X22_Y7_N1; Fanout = 48; REG Node = 'DDPB:inst2|DDBZ'
+            Info: Total cell delay = 3.541 ns ( 41.10 % )
+            Info: Total interconnect delay = 5.075 ns ( 58.90 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: Clock "WCLK" has Internal fmax of 160.33 MHz between source register "LCJS:inst4|BMS[5]" and destination register "LCJS:inst4|JFBZ" (period= 6.237 ns)
+    Info: + Longest register to register delay is 6.370 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X24_Y8_N9; Fanout = 24; REG Node = 'LCJS:inst4|BMS[5]'
+        Info: 2: + IC(0.882 ns) + CELL(0.651 ns) = 1.533 ns; Loc. = LCCOMB_X25_Y8_N16; Fanout = 1; COMB Node = 'LCJS:inst4|WideNor0~5'
+        Info: 3: + IC(0.371 ns) + CELL(0.370 ns) = 2.274 ns; Loc. = LCCOMB_X25_Y8_N26; Fanout = 1; COMB Node = 'LCJS:inst4|WideNor0~6'
+        Info: 4: + IC(0.351 ns) + CELL(0.206 ns) = 2.831 ns; Loc. = LCCOMB_X25_Y8_N24; Fanout = 1; COMB Node = 'LCJS:inst4|WideNor0~9'
+        Info: 5: + IC(1.064 ns) + CELL(0.624 ns) = 4.519 ns; Loc. = LCCOMB_X24_Y9_N20; Fanout = 1; COMB Node = 'LCJS:inst4|WideNor0~21'
+        Info: 6: + IC(0.378 ns) + CELL(0.370 ns) = 5.267 ns; Loc. = LCCOMB_X24_Y9_N22; Fanout = 1; COMB Node = 'LCJS:inst4|WideNor0~37'
+        Info: 7: + IC(0.371 ns) + CELL(0.624 ns) = 6.262 ns; Loc. = LCCOMB_X24_Y9_N26; Fanout = 1; COMB Node = 'LCJS:inst4|WideNor0~79'
+        Info: 8: + IC(0.000 ns) + CELL(0.108 ns) = 6.370 ns; Loc. = LCFF_X24_Y9_N27; Fanout = 1; REG Node = 'LCJS:inst4|JFBZ'
+        Info: Total cell delay = 2.953 ns ( 46.36 % )
+        Info: Total interconnect delay = 3.417 ns ( 53.64 % )
+    Info: - Smallest clock skew is 0.397 ns
+        Info: + Shortest clock path from clock "WCLK" to destination register is 3.179 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_18; Fanout = 2; CLK Node = 'WCLK'
+            Info: 2: + IC(1.423 ns) + CELL(0.666 ns) = 3.179 ns; Loc. = LCFF_X24_Y9_N27; Fanout = 1; REG Node = 'LCJS:inst4|JFBZ'
+            Info: Total cell delay = 1.756 ns ( 55.24 % )
+            Info: Total interconnect delay = 1.423 ns ( 44.76 % )
+        Info: - Longest clock path from clock "WCLK" to source register is 2.782 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_18; Fanout = 2; CLK Node = 'WCLK'
+            Info: 2: + IC(0.136 ns) + CELL(0.000 ns) = 1.226 ns; Loc. = CLKCTRL_G2; Fanout = 33; COMB Node = 'WCLK~clkctrl'
+            Info: 3: + IC(0.890 ns) + CELL(0.666 ns) = 2.782 ns; Loc. = LCFF_X24_Y8_N9; Fanout = 24; REG Node = 'LCJS:inst4|BMS[5]'
+            Info: Total cell delay = 1.756 ns ( 63.12 % )
+            Info: Total interconnect delay = 1.026 ns ( 36.88 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Warning: Circuit may not operate. Detected 14 non-operational path(s) clocked by clock "WCLK" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "LCJS:inst4|LCBZ" and destination pin or register "LCJF:inst5|LCFY1[7]" for clock "WCLK" (Hold time is 2.86 ns)
+    Info: + Largest clock skew is 4.554 ns
+        Info: + Longest clock path from clock "WCLK" to destination register is 7.318 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_18; Fanout = 2; CLK Node = 'WCLK'
+            Info: 2: + IC(1.423 ns) + CELL(0.970 ns) = 3.483 ns; Loc. = LCFF_X24_Y9_N27; Fanout = 1; REG Node = 'LCJS:inst4|JFBZ'
+            Info: 3: + IC(2.269 ns) + CELL(0.000 ns) = 5.752 ns; Loc. = CLKCTRL_G4; Fanout = 14; COMB Node = 'LCJS:inst4|JFBZ~clkctrl'
+            Info: 4: + IC(0.900 ns) + CELL(0.666 ns) = 7.318 ns; Loc. = LCFF_X25_Y7_N11; Fanout = 3; REG Node = 'LCJF:inst5|LCFY1[7]'
+            Info: Total cell delay = 2.726 ns ( 37.25 % )
+            Info: Total interconnect delay = 4.592 ns ( 62.75 % )
+        Info: - Shortest clock path from clock "WCLK" to source register is 2.764 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_18; Fanout = 2; CLK Node = 'WCLK'
+            Info: 2: + IC(0.136 ns) + CELL(0.000 ns) = 1.226 ns; Loc. = CLKCTRL_G2; Fanout = 33; COMB Node = 'WCLK~clkctrl'
+            Info: 3: + IC(0.872 ns) + CELL(0.666 ns) = 2.764 ns; Loc. = LCFF_X25_Y9_N9; Fanout = 15; REG Node = 'LCJS:inst4|LCBZ'
+            Info: Total cell delay = 1.756 ns ( 63.53 % )
+            Info: Total interconnect delay = 1.008 ns ( 36.47 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 1.696 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X25_Y9_N9; Fanout = 15; REG Node = 'LCJS:inst4|LCBZ'
+        Info: 2: + IC(1.036 ns) + CELL(0.660 ns) = 1.696 ns; Loc. = LCFF_X25_Y7_N11; Fanout = 3; REG Node = 'LCJF:inst5|LCFY1[7]'
+        Info: Total cell delay = 0.660 ns ( 38.92 % )
+        Info: Total interconnect delay = 1.036 ns ( 61.08 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Info: tsu for register "LCJF:inst5|LCFY1[15]" (data pin = "SDBZ", clock pin = "WCLK") is 3.043 ns
+    Info: + Longest pin to register delay is 10.401 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.934 ns) = 0.934 ns; Loc. = PIN_114; Fanout = 6; PIN Node = 'SDBZ'
+        Info: 2: + IC(7.182 ns) + CELL(0.621 ns) = 8.737 ns; Loc. = LCCOMB_X25_Y7_N2; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[3]~75'
+        Info: 3: + IC(0.000 ns) + CELL(0.086 ns) = 8.823 ns; Loc. = LCCOMB_X25_Y7_N4; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[4]~77'
+        Info: 4: + IC(0.000 ns) + CELL(0.086 ns) = 8.909 ns; Loc. = LCCOMB_X25_Y7_N6; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[5]~79'
+        Info: 5: + IC(0.000 ns) + CELL(0.086 ns) = 8.995 ns; Loc. = LCCOMB_X25_Y7_N8; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[6]~81'
+        Info: 6: + IC(0.000 ns) + CELL(0.086 ns) = 9.081 ns; Loc. = LCCOMB_X25_Y7_N10; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[7]~83'
+        Info: 7: + IC(0.000 ns) + CELL(0.086 ns) = 9.167 ns; Loc. = LCCOMB_X25_Y7_N12; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[8]~85'
+        Info: 8: + IC(0.000 ns) + CELL(0.190 ns) = 9.357 ns; Loc. = LCCOMB_X25_Y7_N14; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[9]~87'
+        Info: 9: + IC(0.000 ns) + CELL(0.086 ns) = 9.443 ns; Loc. = LCCOMB_X25_Y7_N16; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[10]~89'
+        Info: 10: + IC(0.000 ns) + CELL(0.086 ns) = 9.529 ns; Loc. = LCCOMB_X25_Y7_N18; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[11]~91'
+        Info: 11: + IC(0.000 ns) + CELL(0.086 ns) = 9.615 ns; Loc. = LCCOMB_X25_Y7_N20; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[12]~93'
+        Info: 12: + IC(0.000 ns) + CELL(0.086 ns) = 9.701 ns; Loc. = LCCOMB_X25_Y7_N22; Fanout = 2; COMB Node = 'LCJF:inst5|LCFY1[13]~95'
+        Info: 13: + IC(0.000 ns) + CELL(0.086 ns) = 9.787 ns; Loc. = LCCOMB_X25_Y7_N24; Fanout = 1; COMB Node = 'LCJF:inst5|LCFY1[14]~97'
+        Info: 14: + IC(0.000 ns) + CELL(0.506 ns) = 10.293 ns; Loc. = LCCOMB_X25_Y7_N26; Fanout = 1; COMB Node = 'LCJF:inst5|LCFY1[15]~98'
+        Info: 15: + IC(0.000 ns) + CELL(0.108 ns) = 10.401 ns; Loc. = LCFF_X25_Y7_N27; Fanout = 2; REG Node = 'LCJF:inst5|LCFY1[15]'
+        Info: Total cell delay = 3.219 ns ( 30.95 % )
+        Info: Total interconnect delay = 7.182 ns ( 69.05 % )
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: - Shortest clock path from clock "WCLK" to destination register is 7.318 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_18; Fanout = 2; CLK Node = 'WCLK'
+        Info: 2: + IC(1.423 ns) + CELL(0.970 ns) = 3.483 ns; Loc. = LCFF_X24_Y9_N27; Fanout = 1; REG Node = 'LCJS:inst4|JFBZ'
+        Info: 3: + IC(2.269 ns) + CELL(0.000 ns) = 5.752 ns; Loc. = CLKCTRL_G4; Fanout = 14; COMB Node = 'LCJS:inst4|JFBZ~clkctrl'
+        Info: 4: + IC(0.900 ns) + CELL(0.666 ns) = 7.318 ns; Loc. = LCFF_X25_Y7_N27; Fanout = 2; REG Node = 'LCJF:inst5|LCFY1[15]'
+        Info: Total cell delay = 2.726 ns ( 37.25 % )
+        Info: Total interconnect delay = 4.592 ns ( 62.75 % )
+Info: tco from clock "SCLK" to destination pin "DATA[1]" through register "DDJF:inst7|DDFY1[1]" is 18.845 ns
+    Info: + Longest clock path from clock "SCLK" to source register is 8.024 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.935 ns) = 0.935 ns; Loc. = PIN_104; Fanout = 8; CLK Node = 'SCLK'
+        Info: 2: + IC(1.344 ns) + CELL(0.970 ns) = 3.249 ns; Loc. = LCFF_X33_Y13_N21; Fanout = 4; REG Node = 'FPQ:inst|CLK1'
+        Info: 3: + IC(1.118 ns) + CELL(0.970 ns) = 5.337 ns; Loc. = LCFF_X33_Y10_N11; Fanout = 1; REG Node = 'DDJF:inst7|T60S'
+        Info: 4: + IC(1.132 ns) + CELL(0.000 ns) = 6.469 ns; Loc. = CLKCTRL_G6; Fanout = 16; COMB Node = 'DDJF:inst7|T60S~clkctrl'
+        Info: 5: + IC(0.889 ns) + CELL(0.666 ns) = 8.024 ns; Loc. = LCFF_X22_Y8_N3; Fanout = 3; REG Node = 'DDJF:inst7|DDFY1[1]'
+        Info: Total cell delay = 3.541 ns ( 44.13 % )
+        Info: Total interconnect delay = 4.483 ns ( 55.87 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 10.517 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y8_N3; Fanout = 3; REG Node = 'DDJF:inst7|DDFY1[1]'
+        Info: 2: + IC(1.208 ns) + CELL(0.650 ns) = 1.858 ns; Loc. = LCCOMB_X21_Y7_N12; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[1]~95'
+        Info: 3: + IC(0.364 ns) + CELL(0.206 ns) = 2.428 ns; Loc. = LCCOMB_X21_Y7_N6; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[1]~96'
+        Info: 4: + IC(0.398 ns) + CELL(0.650 ns) = 3.476 ns; Loc. = LCCOMB_X21_Y7_N28; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[1]~99'
+        Info: 5: + IC(0.703 ns) + CELL(0.624 ns) = 4.803 ns; Loc. = LCCOMB_X22_Y7_N22; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[1]~100'
+        Info: 6: + IC(2.488 ns) + CELL(3.226 ns) = 10.517 ns; Loc. = PIN_122; Fanout = 0; PIN Node = 'DATA[1]'
+        Info: Total cell delay = 5.356 ns ( 50.93 % )
+        Info: Total interconnect delay = 5.161 ns ( 49.07 % )
+Info: Longest tpd from source pin "SEL[1]" to destination pin "DATA[7]" is 17.332 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.935 ns) = 0.935 ns; Loc. = PIN_94; Fanout = 24; PIN Node = 'SEL[1]'
+    Info: 2: + IC(6.712 ns) + CELL(0.651 ns) = 8.298 ns; Loc. = LCCOMB_X22_Y7_N12; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[7]~66'
+    Info: 3: + IC(1.009 ns) + CELL(0.624 ns) = 9.931 ns; Loc. = LCCOMB_X24_Y7_N28; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[7]~67'
+    Info: 4: + IC(0.371 ns) + CELL(0.616 ns) = 10.918 ns; Loc. = LCCOMB_X24_Y7_N22; Fanout = 1; COMB Node = 'SCXZ:inst8|DATA[7]~68'
+    Info: 5: + IC(3.178 ns) + CELL(3.236 ns) = 17.332 ns; Loc. = PIN_47; Fanout = 0; PIN Node = 'DATA[7]'
+    Info: Total cell delay = 6.062 ns ( 34.98 % )
+    Info: Total interconnect delay = 11.270 ns ( 65.02 % )
+Info: th for register "LCJF:inst5|LCFY1[5]" (data pin = "SDBZ", clock pin = "WCLK") is -1.184 ns
+    Info: + Longest clock path from clock "WCLK" to destination register is 7.318 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_18; Fanout = 2; CLK Node = 'WCLK'
+        Info: 2: + IC(1.423 ns) + CELL(0.970 ns) = 3.483 ns; Loc. = LCFF_X24_Y9_N27; Fanout = 1; REG Node = 'LCJS:inst4|JFBZ'
+        Info: 3: + IC(2.269 ns) + CELL(0.000 ns) = 5.752 ns; Loc. = CLKCTRL_G4; Fanout = 14; COMB Node = 'LCJS:inst4|JFBZ~clkctrl'
+        Info: 4: + IC(0.900 ns) + CELL(0.666 ns) = 7.318 ns; Loc. = LCFF_X25_Y7_N7; Fanout = 3; REG Node = 'LCJF:inst5|LCFY1[5]'
+        Info: Total cell delay = 2.726 ns ( 37.25 % )
+        Info: Total interconnect delay = 4.592 ns ( 62.75 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+    Info: - Shortest pin to register delay is 8.808 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.934 ns) = 0.934 ns; Loc. = PIN_114; Fanout = 6; PIN Node = 'SDBZ'
+        Info: 2: + IC(7.151 ns) + CELL(0.615 ns) = 8.700 ns; Loc. = LCCOMB_X25_Y7_N6; Fanout = 1; COMB Node = 'LCJF:inst5|LCFY1[5]~78'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 8.808 ns; Loc. = LCFF_X25_Y7_N7; Fanout = 3; REG Node = 'LCJF:inst5|LCFY1[5]'
+        Info: Total cell delay = 1.657 ns ( 18.81 % )
+        Info: Total interconnect delay = 7.151 ns ( 81.19 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 219 megabytes
+    Info: Processing ended: Thu Jul 16 15:17:21 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
