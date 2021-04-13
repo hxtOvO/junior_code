@@ -1,0 +1,60 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		Block1_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C8T144C8
+set_global_assignment -name TOP_LEVEL_ENTITY Block1
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "03:08:26  JANUARY 01, 2006"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name VHDL_FILE DDJF.vhd
+set_global_assignment -name VHDL_FILE DDJS.vhd
+set_global_assignment -name VHDL_FILE DDPB.vhd
+set_global_assignment -name VHDL_FILE FPQ.vhd
+set_global_assignment -name VHDL_FILE LCJF.vhd
+set_global_assignment -name VHDL_FILE LCJS.vhd
+set_global_assignment -name VHDL_FILE SCXZ.vhd
+set_global_assignment -name BDF_FILE "C:\\Documents and Settings\\Administrator\\桌面\\出租车计价器\\Block1.bdf"
+set_location_assignment PIN_121 -to DATA[0]
+set_location_assignment PIN_122 -to DATA[1]
+set_location_assignment PIN_52 -to DATA[2]
+set_location_assignment PIN_53 -to DATA[3]
+set_location_assignment PIN_48 -to DATA[4]
+set_location_assignment PIN_51 -to DATA[5]
+set_location_assignment PIN_45 -to DATA[6]
+set_location_assignment PIN_47 -to DATA[7]
+set_location_assignment PIN_112 -to LCBZ
+set_location_assignment PIN_104 -to SCLK
+set_location_assignment PIN_114 -to SDBZ
+set_location_assignment PIN_93 -to SEL[0]
+set_location_assignment PIN_94 -to SEL[1]
+set_location_assignment PIN_96 -to SEL[2]
+set_location_assignment PIN_97 -to START
+set_location_assignment PIN_18 -to WCLK
+set_global_assignment -name MISC_FILE "C:/Users/席卓然/Desktop/出租车计价器/Block1.dpf"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE Block1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf

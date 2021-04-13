@@ -1,0 +1,520 @@
+Simulator report for LCJS
+Thu Jul 16 16:01:13 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 161 nodes    ;
+; Simulation Coverage         ;       2.75 % ;
+; Total Number of Transitions ; 998          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C8T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       2.75 % ;
+; Total nodes checked                                 ; 161          ;
+; Total output ports checked                          ; 182          ;
+; Total output ports with complete 1/0-value coverage ; 5            ;
+; Total output ports with no 1/0-value coverage       ; 177          ;
+; Total output ports with no 1-value coverage         ; 177          ;
+; Total output ports with no 0-value coverage         ; 177          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                  ;
++---------------------+---------------------+------------------+
+; Node Name           ; Output Port Name    ; Output Port Type ;
++---------------------+---------------------+------------------+
+; |LCJS|DDBZ          ; |LCJS|DDBZ~corein   ; combout          ;
+; |LCJS|WCLK          ; |LCJS|WCLK~corein   ; combout          ;
+; |LCJS|START         ; |LCJS|START~corein  ; combout          ;
+; |LCJS|START~clkctrl ; |LCJS|START~clkctrl ; outclk           ;
+; |LCJS|WCLK~clkctrl  ; |LCJS|WCLK~clkctrl  ; outclk           ;
++---------------------+---------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------+
+; Missing 1-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |LCJS|BMS[0]      ; |LCJS|BMS[0]      ; regout           ;
+; |LCJS|BMS[1]      ; |LCJS|BMS[1]      ; regout           ;
+; |LCJS|BMS[2]      ; |LCJS|BMS[2]      ; regout           ;
+; |LCJS|BMS[3]      ; |LCJS|BMS[3]      ; regout           ;
+; |LCJS|BMS[4]      ; |LCJS|BMS[4]      ; regout           ;
+; |LCJS|BMS[5]      ; |LCJS|BMS[5]      ; regout           ;
+; |LCJS|BMS[6]      ; |LCJS|BMS[6]      ; regout           ;
+; |LCJS|BMS[7]      ; |LCJS|BMS[7]      ; regout           ;
+; |LCJS|BMS[8]      ; |LCJS|BMS[8]      ; regout           ;
+; |LCJS|BMS[9]      ; |LCJS|BMS[9]      ; regout           ;
+; |LCJS|BMS[10]     ; |LCJS|BMS[10]     ; regout           ;
+; |LCJS|BMS[11]     ; |LCJS|BMS[11]     ; regout           ;
+; |LCJS|BMS[12]     ; |LCJS|BMS[12]     ; regout           ;
+; |LCJS|BMS[13]     ; |LCJS|BMS[13]     ; regout           ;
+; |LCJS|BMS[14]     ; |LCJS|BMS[14]     ; regout           ;
+; |LCJS|BMS[15]     ; |LCJS|BMS[15]     ; regout           ;
+; |LCJS|LCBZ~reg0   ; |LCJS|LCBZ~reg0   ; regout           ;
+; |LCJS|JFBZ~reg0   ; |LCJS|JFBZ~reg0   ; regout           ;
+; |LCJS|MS[6]       ; |LCJS|MS[6]       ; regout           ;
+; |LCJS|MS[5]       ; |LCJS|MS[5]       ; regout           ;
+; |LCJS|MS[7]       ; |LCJS|MS[7]       ; regout           ;
+; |LCJS|MS[4]       ; |LCJS|MS[4]       ; regout           ;
+; |LCJS|Equal0~0    ; |LCJS|Equal0~0    ; combout          ;
+; |LCJS|MS[1]       ; |LCJS|MS[1]       ; regout           ;
+; |LCJS|MS[0]       ; |LCJS|MS[0]       ; regout           ;
+; |LCJS|MS[3]       ; |LCJS|MS[3]       ; regout           ;
+; |LCJS|MS[2]       ; |LCJS|MS[2]       ; regout           ;
+; |LCJS|Equal0~1    ; |LCJS|Equal0~1    ; combout          ;
+; |LCJS|BMS[0]~31   ; |LCJS|BMS[0]~31   ; combout          ;
+; |LCJS|BMS[1]~32   ; |LCJS|BMS[1]~32   ; combout          ;
+; |LCJS|BMS[1]~32   ; |LCJS|BMS[1]~33   ; cout             ;
+; |LCJS|BMS[0]~34   ; |LCJS|BMS[0]~34   ; combout          ;
+; |LCJS|BMS[2]~35   ; |LCJS|BMS[2]~35   ; combout          ;
+; |LCJS|BMS[2]~35   ; |LCJS|BMS[2]~36   ; cout             ;
+; |LCJS|BMS[3]~37   ; |LCJS|BMS[3]~37   ; combout          ;
+; |LCJS|BMS[3]~37   ; |LCJS|BMS[3]~38   ; cout             ;
+; |LCJS|BMS[4]~39   ; |LCJS|BMS[4]~39   ; combout          ;
+; |LCJS|BMS[4]~39   ; |LCJS|BMS[4]~40   ; cout             ;
+; |LCJS|BMS[5]~41   ; |LCJS|BMS[5]~41   ; combout          ;
+; |LCJS|BMS[5]~41   ; |LCJS|BMS[5]~42   ; cout             ;
+; |LCJS|BMS[6]~43   ; |LCJS|BMS[6]~43   ; combout          ;
+; |LCJS|BMS[6]~43   ; |LCJS|BMS[6]~44   ; cout             ;
+; |LCJS|BMS[7]~45   ; |LCJS|BMS[7]~45   ; combout          ;
+; |LCJS|BMS[7]~45   ; |LCJS|BMS[7]~46   ; cout             ;
+; |LCJS|BMS[8]~47   ; |LCJS|BMS[8]~47   ; combout          ;
+; |LCJS|BMS[8]~47   ; |LCJS|BMS[8]~48   ; cout             ;
+; |LCJS|BMS[9]~49   ; |LCJS|BMS[9]~49   ; combout          ;
+; |LCJS|BMS[9]~49   ; |LCJS|BMS[9]~50   ; cout             ;
+; |LCJS|BMS[10]~51  ; |LCJS|BMS[10]~51  ; combout          ;
+; |LCJS|BMS[10]~51  ; |LCJS|BMS[10]~52  ; cout             ;
+; |LCJS|BMS[11]~53  ; |LCJS|BMS[11]~53  ; combout          ;
+; |LCJS|BMS[11]~53  ; |LCJS|BMS[11]~54  ; cout             ;
+; |LCJS|BMS[12]~55  ; |LCJS|BMS[12]~55  ; combout          ;
+; |LCJS|BMS[12]~55  ; |LCJS|BMS[12]~56  ; cout             ;
+; |LCJS|BMS[13]~57  ; |LCJS|BMS[13]~57  ; combout          ;
+; |LCJS|BMS[13]~57  ; |LCJS|BMS[13]~58  ; cout             ;
+; |LCJS|BMS[14]~59  ; |LCJS|BMS[14]~59  ; combout          ;
+; |LCJS|BMS[14]~59  ; |LCJS|BMS[14]~60  ; cout             ;
+; |LCJS|BMS[15]~61  ; |LCJS|BMS[15]~61  ; combout          ;
+; |LCJS|LessThan0~0 ; |LCJS|LessThan0~0 ; combout          ;
+; |LCJS|LessThan0~1 ; |LCJS|LessThan0~1 ; combout          ;
+; |LCJS|LessThan0~2 ; |LCJS|LessThan0~2 ; combout          ;
+; |LCJS|LessThan0~3 ; |LCJS|LessThan0~3 ; combout          ;
+; |LCJS|LessThan0~4 ; |LCJS|LessThan0~4 ; combout          ;
+; |LCJS|LCBZ~2      ; |LCJS|LCBZ~2      ; combout          ;
+; |LCJS|WideNor0~4  ; |LCJS|WideNor0~4  ; combout          ;
+; |LCJS|WideNor0~5  ; |LCJS|WideNor0~5  ; combout          ;
+; |LCJS|WideNor0~6  ; |LCJS|WideNor0~6  ; combout          ;
+; |LCJS|WideNor0~7  ; |LCJS|WideNor0~7  ; combout          ;
+; |LCJS|WideNor0~8  ; |LCJS|WideNor0~8  ; combout          ;
+; |LCJS|WideNor0~9  ; |LCJS|WideNor0~9  ; combout          ;
+; |LCJS|WideNor0~10 ; |LCJS|WideNor0~10 ; combout          ;
+; |LCJS|WideNor0~11 ; |LCJS|WideNor0~11 ; combout          ;
+; |LCJS|WideNor0~12 ; |LCJS|WideNor0~12 ; combout          ;
+; |LCJS|WideNor0~13 ; |LCJS|WideNor0~13 ; combout          ;
+; |LCJS|WideNor0~14 ; |LCJS|WideNor0~14 ; combout          ;
+; |LCJS|WideNor0~15 ; |LCJS|WideNor0~15 ; combout          ;
+; |LCJS|WideNor0~16 ; |LCJS|WideNor0~16 ; combout          ;
+; |LCJS|WideNor0~17 ; |LCJS|WideNor0~17 ; combout          ;
+; |LCJS|WideNor0~18 ; |LCJS|WideNor0~18 ; combout          ;
+; |LCJS|WideNor0~19 ; |LCJS|WideNor0~19 ; combout          ;
+; |LCJS|WideNor0~20 ; |LCJS|WideNor0~20 ; combout          ;
+; |LCJS|WideNor0~21 ; |LCJS|WideNor0~21 ; combout          ;
+; |LCJS|WideNor0~22 ; |LCJS|WideNor0~22 ; combout          ;
+; |LCJS|WideNor0~23 ; |LCJS|WideNor0~23 ; combout          ;
+; |LCJS|WideNor0~24 ; |LCJS|WideNor0~24 ; combout          ;
+; |LCJS|WideNor0~25 ; |LCJS|WideNor0~25 ; combout          ;
+; |LCJS|WideNor0~26 ; |LCJS|WideNor0~26 ; combout          ;
+; |LCJS|WideNor0~27 ; |LCJS|WideNor0~27 ; combout          ;
+; |LCJS|WideNor0~28 ; |LCJS|WideNor0~28 ; combout          ;
+; |LCJS|WideNor0~29 ; |LCJS|WideNor0~29 ; combout          ;
+; |LCJS|WideNor0~30 ; |LCJS|WideNor0~30 ; combout          ;
+; |LCJS|WideNor0~31 ; |LCJS|WideNor0~31 ; combout          ;
+; |LCJS|WideNor0~32 ; |LCJS|WideNor0~32 ; combout          ;
+; |LCJS|WideNor0~33 ; |LCJS|WideNor0~33 ; combout          ;
+; |LCJS|WideNor0~34 ; |LCJS|WideNor0~34 ; combout          ;
+; |LCJS|WideNor0~35 ; |LCJS|WideNor0~35 ; combout          ;
+; |LCJS|WideNor0~36 ; |LCJS|WideNor0~36 ; combout          ;
+; |LCJS|WideNor0~37 ; |LCJS|WideNor0~37 ; combout          ;
+; |LCJS|WideNor0~38 ; |LCJS|WideNor0~38 ; combout          ;
+; |LCJS|WideNor0~39 ; |LCJS|WideNor0~39 ; combout          ;
+; |LCJS|WideNor0~40 ; |LCJS|WideNor0~40 ; combout          ;
+; |LCJS|WideNor0~41 ; |LCJS|WideNor0~41 ; combout          ;
+; |LCJS|WideNor0~42 ; |LCJS|WideNor0~42 ; combout          ;
+; |LCJS|WideNor0~43 ; |LCJS|WideNor0~43 ; combout          ;
+; |LCJS|WideNor0~44 ; |LCJS|WideNor0~44 ; combout          ;
+; |LCJS|WideNor0~45 ; |LCJS|WideNor0~45 ; combout          ;
+; |LCJS|WideNor0~46 ; |LCJS|WideNor0~46 ; combout          ;
+; |LCJS|WideNor0~47 ; |LCJS|WideNor0~47 ; combout          ;
+; |LCJS|WideNor0~48 ; |LCJS|WideNor0~48 ; combout          ;
+; |LCJS|WideNor0~49 ; |LCJS|WideNor0~49 ; combout          ;
+; |LCJS|WideNor0~50 ; |LCJS|WideNor0~50 ; combout          ;
+; |LCJS|WideNor0~51 ; |LCJS|WideNor0~51 ; combout          ;
+; |LCJS|WideNor0~52 ; |LCJS|WideNor0~52 ; combout          ;
+; |LCJS|WideNor0~53 ; |LCJS|WideNor0~53 ; combout          ;
+; |LCJS|WideNor0~54 ; |LCJS|WideNor0~54 ; combout          ;
+; |LCJS|WideNor0~55 ; |LCJS|WideNor0~55 ; combout          ;
+; |LCJS|WideNor0~56 ; |LCJS|WideNor0~56 ; combout          ;
+; |LCJS|WideNor0~57 ; |LCJS|WideNor0~57 ; combout          ;
+; |LCJS|WideNor0~58 ; |LCJS|WideNor0~58 ; combout          ;
+; |LCJS|WideNor0~59 ; |LCJS|WideNor0~59 ; combout          ;
+; |LCJS|WideNor0~60 ; |LCJS|WideNor0~60 ; combout          ;
+; |LCJS|WideNor0~61 ; |LCJS|WideNor0~61 ; combout          ;
+; |LCJS|WideNor0~62 ; |LCJS|WideNor0~62 ; combout          ;
+; |LCJS|WideNor0~63 ; |LCJS|WideNor0~63 ; combout          ;
+; |LCJS|WideNor0~64 ; |LCJS|WideNor0~64 ; combout          ;
+; |LCJS|WideNor0~65 ; |LCJS|WideNor0~65 ; combout          ;
+; |LCJS|WideNor0~66 ; |LCJS|WideNor0~66 ; combout          ;
+; |LCJS|WideNor0~67 ; |LCJS|WideNor0~67 ; combout          ;
+; |LCJS|WideNor0~68 ; |LCJS|WideNor0~68 ; combout          ;
+; |LCJS|WideNor0~69 ; |LCJS|WideNor0~69 ; combout          ;
+; |LCJS|WideNor0~70 ; |LCJS|WideNor0~70 ; combout          ;
+; |LCJS|WideNor0~71 ; |LCJS|WideNor0~71 ; combout          ;
+; |LCJS|WideNor0~72 ; |LCJS|WideNor0~72 ; combout          ;
+; |LCJS|WideNor0~73 ; |LCJS|WideNor0~73 ; combout          ;
+; |LCJS|WideNor0~74 ; |LCJS|WideNor0~74 ; combout          ;
+; |LCJS|WideNor0~75 ; |LCJS|WideNor0~75 ; combout          ;
+; |LCJS|WideNor0~76 ; |LCJS|WideNor0~76 ; combout          ;
+; |LCJS|Add1~0      ; |LCJS|Add1~0      ; combout          ;
+; |LCJS|Add1~0      ; |LCJS|Add1~1      ; cout             ;
+; |LCJS|Add1~2      ; |LCJS|Add1~2      ; combout          ;
+; |LCJS|Add1~2      ; |LCJS|Add1~3      ; cout             ;
+; |LCJS|Add1~4      ; |LCJS|Add1~4      ; combout          ;
+; |LCJS|Add1~4      ; |LCJS|Add1~5      ; cout             ;
+; |LCJS|Add1~6      ; |LCJS|Add1~6      ; combout          ;
+; |LCJS|Add1~6      ; |LCJS|Add1~7      ; cout             ;
+; |LCJS|Add1~8      ; |LCJS|Add1~8      ; combout          ;
+; |LCJS|Add1~8      ; |LCJS|Add1~9      ; cout             ;
+; |LCJS|Add1~10     ; |LCJS|Add1~10     ; combout          ;
+; |LCJS|Add1~10     ; |LCJS|Add1~11     ; cout             ;
+; |LCJS|Add1~12     ; |LCJS|Add1~12     ; combout          ;
+; |LCJS|Add1~12     ; |LCJS|Add1~13     ; cout             ;
+; |LCJS|MS~8        ; |LCJS|MS~8        ; combout          ;
+; |LCJS|MS~9        ; |LCJS|MS~9        ; combout          ;
+; |LCJS|Add1~14     ; |LCJS|Add1~14     ; combout          ;
+; |LCJS|MS~10       ; |LCJS|MS~10       ; combout          ;
+; |LCJS|WideNor0~2  ; |LCJS|WideNor0~2  ; combout          ;
+; |LCJS|WideNor0~3  ; |LCJS|WideNor0~3  ; combout          ;
+; |LCJS|WideNor0~77 ; |LCJS|WideNor0~77 ; combout          ;
+; |LCJS|XSLC[0]     ; |LCJS|XSLC[0]     ; padio            ;
+; |LCJS|XSLC[1]     ; |LCJS|XSLC[1]     ; padio            ;
+; |LCJS|XSLC[2]     ; |LCJS|XSLC[2]     ; padio            ;
+; |LCJS|XSLC[3]     ; |LCJS|XSLC[3]     ; padio            ;
+; |LCJS|XSLC[4]     ; |LCJS|XSLC[4]     ; padio            ;
+; |LCJS|XSLC[5]     ; |LCJS|XSLC[5]     ; padio            ;
+; |LCJS|XSLC[6]     ; |LCJS|XSLC[6]     ; padio            ;
+; |LCJS|XSLC[7]     ; |LCJS|XSLC[7]     ; padio            ;
+; |LCJS|XSLC[8]     ; |LCJS|XSLC[8]     ; padio            ;
+; |LCJS|XSLC[9]     ; |LCJS|XSLC[9]     ; padio            ;
+; |LCJS|XSLC[10]    ; |LCJS|XSLC[10]    ; padio            ;
+; |LCJS|XSLC[11]    ; |LCJS|XSLC[11]    ; padio            ;
+; |LCJS|XSLC[12]    ; |LCJS|XSLC[12]    ; padio            ;
+; |LCJS|XSLC[13]    ; |LCJS|XSLC[13]    ; padio            ;
+; |LCJS|XSLC[14]    ; |LCJS|XSLC[14]    ; padio            ;
+; |LCJS|XSLC[15]    ; |LCJS|XSLC[15]    ; padio            ;
+; |LCJS|LCBZ        ; |LCJS|LCBZ        ; padio            ;
+; |LCJS|JFBZ        ; |LCJS|JFBZ        ; padio            ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------+
+; Missing 0-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |LCJS|BMS[0]      ; |LCJS|BMS[0]      ; regout           ;
+; |LCJS|BMS[1]      ; |LCJS|BMS[1]      ; regout           ;
+; |LCJS|BMS[2]      ; |LCJS|BMS[2]      ; regout           ;
+; |LCJS|BMS[3]      ; |LCJS|BMS[3]      ; regout           ;
+; |LCJS|BMS[4]      ; |LCJS|BMS[4]      ; regout           ;
+; |LCJS|BMS[5]      ; |LCJS|BMS[5]      ; regout           ;
+; |LCJS|BMS[6]      ; |LCJS|BMS[6]      ; regout           ;
+; |LCJS|BMS[7]      ; |LCJS|BMS[7]      ; regout           ;
+; |LCJS|BMS[8]      ; |LCJS|BMS[8]      ; regout           ;
+; |LCJS|BMS[9]      ; |LCJS|BMS[9]      ; regout           ;
+; |LCJS|BMS[10]     ; |LCJS|BMS[10]     ; regout           ;
+; |LCJS|BMS[11]     ; |LCJS|BMS[11]     ; regout           ;
+; |LCJS|BMS[12]     ; |LCJS|BMS[12]     ; regout           ;
+; |LCJS|BMS[13]     ; |LCJS|BMS[13]     ; regout           ;
+; |LCJS|BMS[14]     ; |LCJS|BMS[14]     ; regout           ;
+; |LCJS|BMS[15]     ; |LCJS|BMS[15]     ; regout           ;
+; |LCJS|LCBZ~reg0   ; |LCJS|LCBZ~reg0   ; regout           ;
+; |LCJS|JFBZ~reg0   ; |LCJS|JFBZ~reg0   ; regout           ;
+; |LCJS|MS[6]       ; |LCJS|MS[6]       ; regout           ;
+; |LCJS|MS[5]       ; |LCJS|MS[5]       ; regout           ;
+; |LCJS|MS[7]       ; |LCJS|MS[7]       ; regout           ;
+; |LCJS|MS[4]       ; |LCJS|MS[4]       ; regout           ;
+; |LCJS|Equal0~0    ; |LCJS|Equal0~0    ; combout          ;
+; |LCJS|MS[1]       ; |LCJS|MS[1]       ; regout           ;
+; |LCJS|MS[0]       ; |LCJS|MS[0]       ; regout           ;
+; |LCJS|MS[3]       ; |LCJS|MS[3]       ; regout           ;
+; |LCJS|MS[2]       ; |LCJS|MS[2]       ; regout           ;
+; |LCJS|Equal0~1    ; |LCJS|Equal0~1    ; combout          ;
+; |LCJS|BMS[0]~31   ; |LCJS|BMS[0]~31   ; combout          ;
+; |LCJS|BMS[1]~32   ; |LCJS|BMS[1]~32   ; combout          ;
+; |LCJS|BMS[1]~32   ; |LCJS|BMS[1]~33   ; cout             ;
+; |LCJS|BMS[0]~34   ; |LCJS|BMS[0]~34   ; combout          ;
+; |LCJS|BMS[2]~35   ; |LCJS|BMS[2]~35   ; combout          ;
+; |LCJS|BMS[2]~35   ; |LCJS|BMS[2]~36   ; cout             ;
+; |LCJS|BMS[3]~37   ; |LCJS|BMS[3]~37   ; combout          ;
+; |LCJS|BMS[3]~37   ; |LCJS|BMS[3]~38   ; cout             ;
+; |LCJS|BMS[4]~39   ; |LCJS|BMS[4]~39   ; combout          ;
+; |LCJS|BMS[4]~39   ; |LCJS|BMS[4]~40   ; cout             ;
+; |LCJS|BMS[5]~41   ; |LCJS|BMS[5]~41   ; combout          ;
+; |LCJS|BMS[5]~41   ; |LCJS|BMS[5]~42   ; cout             ;
+; |LCJS|BMS[6]~43   ; |LCJS|BMS[6]~43   ; combout          ;
+; |LCJS|BMS[6]~43   ; |LCJS|BMS[6]~44   ; cout             ;
+; |LCJS|BMS[7]~45   ; |LCJS|BMS[7]~45   ; combout          ;
+; |LCJS|BMS[7]~45   ; |LCJS|BMS[7]~46   ; cout             ;
+; |LCJS|BMS[8]~47   ; |LCJS|BMS[8]~47   ; combout          ;
+; |LCJS|BMS[8]~47   ; |LCJS|BMS[8]~48   ; cout             ;
+; |LCJS|BMS[9]~49   ; |LCJS|BMS[9]~49   ; combout          ;
+; |LCJS|BMS[9]~49   ; |LCJS|BMS[9]~50   ; cout             ;
+; |LCJS|BMS[10]~51  ; |LCJS|BMS[10]~51  ; combout          ;
+; |LCJS|BMS[10]~51  ; |LCJS|BMS[10]~52  ; cout             ;
+; |LCJS|BMS[11]~53  ; |LCJS|BMS[11]~53  ; combout          ;
+; |LCJS|BMS[11]~53  ; |LCJS|BMS[11]~54  ; cout             ;
+; |LCJS|BMS[12]~55  ; |LCJS|BMS[12]~55  ; combout          ;
+; |LCJS|BMS[12]~55  ; |LCJS|BMS[12]~56  ; cout             ;
+; |LCJS|BMS[13]~57  ; |LCJS|BMS[13]~57  ; combout          ;
+; |LCJS|BMS[13]~57  ; |LCJS|BMS[13]~58  ; cout             ;
+; |LCJS|BMS[14]~59  ; |LCJS|BMS[14]~59  ; combout          ;
+; |LCJS|BMS[14]~59  ; |LCJS|BMS[14]~60  ; cout             ;
+; |LCJS|BMS[15]~61  ; |LCJS|BMS[15]~61  ; combout          ;
+; |LCJS|LessThan0~0 ; |LCJS|LessThan0~0 ; combout          ;
+; |LCJS|LessThan0~1 ; |LCJS|LessThan0~1 ; combout          ;
+; |LCJS|LessThan0~2 ; |LCJS|LessThan0~2 ; combout          ;
+; |LCJS|LessThan0~3 ; |LCJS|LessThan0~3 ; combout          ;
+; |LCJS|LessThan0~4 ; |LCJS|LessThan0~4 ; combout          ;
+; |LCJS|LCBZ~2      ; |LCJS|LCBZ~2      ; combout          ;
+; |LCJS|WideNor0~4  ; |LCJS|WideNor0~4  ; combout          ;
+; |LCJS|WideNor0~5  ; |LCJS|WideNor0~5  ; combout          ;
+; |LCJS|WideNor0~6  ; |LCJS|WideNor0~6  ; combout          ;
+; |LCJS|WideNor0~7  ; |LCJS|WideNor0~7  ; combout          ;
+; |LCJS|WideNor0~8  ; |LCJS|WideNor0~8  ; combout          ;
+; |LCJS|WideNor0~9  ; |LCJS|WideNor0~9  ; combout          ;
+; |LCJS|WideNor0~10 ; |LCJS|WideNor0~10 ; combout          ;
+; |LCJS|WideNor0~11 ; |LCJS|WideNor0~11 ; combout          ;
+; |LCJS|WideNor0~12 ; |LCJS|WideNor0~12 ; combout          ;
+; |LCJS|WideNor0~13 ; |LCJS|WideNor0~13 ; combout          ;
+; |LCJS|WideNor0~14 ; |LCJS|WideNor0~14 ; combout          ;
+; |LCJS|WideNor0~15 ; |LCJS|WideNor0~15 ; combout          ;
+; |LCJS|WideNor0~16 ; |LCJS|WideNor0~16 ; combout          ;
+; |LCJS|WideNor0~17 ; |LCJS|WideNor0~17 ; combout          ;
+; |LCJS|WideNor0~18 ; |LCJS|WideNor0~18 ; combout          ;
+; |LCJS|WideNor0~19 ; |LCJS|WideNor0~19 ; combout          ;
+; |LCJS|WideNor0~20 ; |LCJS|WideNor0~20 ; combout          ;
+; |LCJS|WideNor0~21 ; |LCJS|WideNor0~21 ; combout          ;
+; |LCJS|WideNor0~22 ; |LCJS|WideNor0~22 ; combout          ;
+; |LCJS|WideNor0~23 ; |LCJS|WideNor0~23 ; combout          ;
+; |LCJS|WideNor0~24 ; |LCJS|WideNor0~24 ; combout          ;
+; |LCJS|WideNor0~25 ; |LCJS|WideNor0~25 ; combout          ;
+; |LCJS|WideNor0~26 ; |LCJS|WideNor0~26 ; combout          ;
+; |LCJS|WideNor0~27 ; |LCJS|WideNor0~27 ; combout          ;
+; |LCJS|WideNor0~28 ; |LCJS|WideNor0~28 ; combout          ;
+; |LCJS|WideNor0~29 ; |LCJS|WideNor0~29 ; combout          ;
+; |LCJS|WideNor0~30 ; |LCJS|WideNor0~30 ; combout          ;
+; |LCJS|WideNor0~31 ; |LCJS|WideNor0~31 ; combout          ;
+; |LCJS|WideNor0~32 ; |LCJS|WideNor0~32 ; combout          ;
+; |LCJS|WideNor0~33 ; |LCJS|WideNor0~33 ; combout          ;
+; |LCJS|WideNor0~34 ; |LCJS|WideNor0~34 ; combout          ;
+; |LCJS|WideNor0~35 ; |LCJS|WideNor0~35 ; combout          ;
+; |LCJS|WideNor0~36 ; |LCJS|WideNor0~36 ; combout          ;
+; |LCJS|WideNor0~37 ; |LCJS|WideNor0~37 ; combout          ;
+; |LCJS|WideNor0~38 ; |LCJS|WideNor0~38 ; combout          ;
+; |LCJS|WideNor0~39 ; |LCJS|WideNor0~39 ; combout          ;
+; |LCJS|WideNor0~40 ; |LCJS|WideNor0~40 ; combout          ;
+; |LCJS|WideNor0~41 ; |LCJS|WideNor0~41 ; combout          ;
+; |LCJS|WideNor0~42 ; |LCJS|WideNor0~42 ; combout          ;
+; |LCJS|WideNor0~43 ; |LCJS|WideNor0~43 ; combout          ;
+; |LCJS|WideNor0~44 ; |LCJS|WideNor0~44 ; combout          ;
+; |LCJS|WideNor0~45 ; |LCJS|WideNor0~45 ; combout          ;
+; |LCJS|WideNor0~46 ; |LCJS|WideNor0~46 ; combout          ;
+; |LCJS|WideNor0~47 ; |LCJS|WideNor0~47 ; combout          ;
+; |LCJS|WideNor0~48 ; |LCJS|WideNor0~48 ; combout          ;
+; |LCJS|WideNor0~49 ; |LCJS|WideNor0~49 ; combout          ;
+; |LCJS|WideNor0~50 ; |LCJS|WideNor0~50 ; combout          ;
+; |LCJS|WideNor0~51 ; |LCJS|WideNor0~51 ; combout          ;
+; |LCJS|WideNor0~52 ; |LCJS|WideNor0~52 ; combout          ;
+; |LCJS|WideNor0~53 ; |LCJS|WideNor0~53 ; combout          ;
+; |LCJS|WideNor0~54 ; |LCJS|WideNor0~54 ; combout          ;
+; |LCJS|WideNor0~55 ; |LCJS|WideNor0~55 ; combout          ;
+; |LCJS|WideNor0~56 ; |LCJS|WideNor0~56 ; combout          ;
+; |LCJS|WideNor0~57 ; |LCJS|WideNor0~57 ; combout          ;
+; |LCJS|WideNor0~58 ; |LCJS|WideNor0~58 ; combout          ;
+; |LCJS|WideNor0~59 ; |LCJS|WideNor0~59 ; combout          ;
+; |LCJS|WideNor0~60 ; |LCJS|WideNor0~60 ; combout          ;
+; |LCJS|WideNor0~61 ; |LCJS|WideNor0~61 ; combout          ;
+; |LCJS|WideNor0~62 ; |LCJS|WideNor0~62 ; combout          ;
+; |LCJS|WideNor0~63 ; |LCJS|WideNor0~63 ; combout          ;
+; |LCJS|WideNor0~64 ; |LCJS|WideNor0~64 ; combout          ;
+; |LCJS|WideNor0~65 ; |LCJS|WideNor0~65 ; combout          ;
+; |LCJS|WideNor0~66 ; |LCJS|WideNor0~66 ; combout          ;
+; |LCJS|WideNor0~67 ; |LCJS|WideNor0~67 ; combout          ;
+; |LCJS|WideNor0~68 ; |LCJS|WideNor0~68 ; combout          ;
+; |LCJS|WideNor0~69 ; |LCJS|WideNor0~69 ; combout          ;
+; |LCJS|WideNor0~70 ; |LCJS|WideNor0~70 ; combout          ;
+; |LCJS|WideNor0~71 ; |LCJS|WideNor0~71 ; combout          ;
+; |LCJS|WideNor0~72 ; |LCJS|WideNor0~72 ; combout          ;
+; |LCJS|WideNor0~73 ; |LCJS|WideNor0~73 ; combout          ;
+; |LCJS|WideNor0~74 ; |LCJS|WideNor0~74 ; combout          ;
+; |LCJS|WideNor0~75 ; |LCJS|WideNor0~75 ; combout          ;
+; |LCJS|WideNor0~76 ; |LCJS|WideNor0~76 ; combout          ;
+; |LCJS|Add1~0      ; |LCJS|Add1~0      ; combout          ;
+; |LCJS|Add1~0      ; |LCJS|Add1~1      ; cout             ;
+; |LCJS|Add1~2      ; |LCJS|Add1~2      ; combout          ;
+; |LCJS|Add1~2      ; |LCJS|Add1~3      ; cout             ;
+; |LCJS|Add1~4      ; |LCJS|Add1~4      ; combout          ;
+; |LCJS|Add1~4      ; |LCJS|Add1~5      ; cout             ;
+; |LCJS|Add1~6      ; |LCJS|Add1~6      ; combout          ;
+; |LCJS|Add1~6      ; |LCJS|Add1~7      ; cout             ;
+; |LCJS|Add1~8      ; |LCJS|Add1~8      ; combout          ;
+; |LCJS|Add1~8      ; |LCJS|Add1~9      ; cout             ;
+; |LCJS|Add1~10     ; |LCJS|Add1~10     ; combout          ;
+; |LCJS|Add1~10     ; |LCJS|Add1~11     ; cout             ;
+; |LCJS|Add1~12     ; |LCJS|Add1~12     ; combout          ;
+; |LCJS|Add1~12     ; |LCJS|Add1~13     ; cout             ;
+; |LCJS|MS~8        ; |LCJS|MS~8        ; combout          ;
+; |LCJS|MS~9        ; |LCJS|MS~9        ; combout          ;
+; |LCJS|Add1~14     ; |LCJS|Add1~14     ; combout          ;
+; |LCJS|MS~10       ; |LCJS|MS~10       ; combout          ;
+; |LCJS|WideNor0~2  ; |LCJS|WideNor0~2  ; combout          ;
+; |LCJS|WideNor0~3  ; |LCJS|WideNor0~3  ; combout          ;
+; |LCJS|WideNor0~77 ; |LCJS|WideNor0~77 ; combout          ;
+; |LCJS|XSLC[0]     ; |LCJS|XSLC[0]     ; padio            ;
+; |LCJS|XSLC[1]     ; |LCJS|XSLC[1]     ; padio            ;
+; |LCJS|XSLC[2]     ; |LCJS|XSLC[2]     ; padio            ;
+; |LCJS|XSLC[3]     ; |LCJS|XSLC[3]     ; padio            ;
+; |LCJS|XSLC[4]     ; |LCJS|XSLC[4]     ; padio            ;
+; |LCJS|XSLC[5]     ; |LCJS|XSLC[5]     ; padio            ;
+; |LCJS|XSLC[6]     ; |LCJS|XSLC[6]     ; padio            ;
+; |LCJS|XSLC[7]     ; |LCJS|XSLC[7]     ; padio            ;
+; |LCJS|XSLC[8]     ; |LCJS|XSLC[8]     ; padio            ;
+; |LCJS|XSLC[9]     ; |LCJS|XSLC[9]     ; padio            ;
+; |LCJS|XSLC[10]    ; |LCJS|XSLC[10]    ; padio            ;
+; |LCJS|XSLC[11]    ; |LCJS|XSLC[11]    ; padio            ;
+; |LCJS|XSLC[12]    ; |LCJS|XSLC[12]    ; padio            ;
+; |LCJS|XSLC[13]    ; |LCJS|XSLC[13]    ; padio            ;
+; |LCJS|XSLC[14]    ; |LCJS|XSLC[14]    ; padio            ;
+; |LCJS|XSLC[15]    ; |LCJS|XSLC[15]    ; padio            ;
+; |LCJS|LCBZ        ; |LCJS|LCBZ        ; padio            ;
+; |LCJS|JFBZ        ; |LCJS|JFBZ        ; padio            ;
++-------------------+-------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Jul 16 16:01:13 2020
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off LCJS -c LCJS
+Info: Using vector source file "C:/Users/席卓然/Desktop/出租车计价器/LCJS.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       2.75 %
+Info: Number of transitions in simulation is 998
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 190 megabytes
+    Info: Processing ended: Thu Jul 16 16:01:13 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

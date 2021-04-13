@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jul 16 14:47:34 2020
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : DDJS
+Top-level Entity Name : DDJS
+Family : Cyclone II
+Total logic elements : 25
+    Total combinational functions : 25
+    Dedicated logic registers : 16
+Total registers : 16
+Total pins : 20
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,5 +1,4 @@
 # junior_code
-## written at the beginning
-It's the first time to use github,markdown the same
+code written in junior year
 ## what to be involved
-code written in my junior college year will be uploaded here,with all kinds of subjects I'am attending
+code written in my junior year,just for a memorials

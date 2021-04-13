@@ -1,0 +1,241 @@
+Simulator report for DDPB
+Wed Jul 15 21:31:25 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 53 nodes     ;
+; Simulation Coverage         ;      74.63 % ;
+; Total Number of Transitions ; 2181         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C8T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      74.63 % ;
+; Total nodes checked                                 ; 53           ;
+; Total output ports checked                          ; 67           ;
+; Total output ports with complete 1/0-value coverage ; 50           ;
+; Total output ports with no 1/0-value coverage       ; 13           ;
+; Total output ports with no 1-value coverage         ; 15           ;
+; Total output ports with no 0-value coverage         ; 15           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                    ;
++----------------------+----------------------+------------------+
+; Node Name            ; Output Port Name     ; Output Port Type ;
++----------------------+----------------------+------------------+
+; |DDPB|WCLKCOU[3]     ; |DDPB|WCLKCOU[3]     ; regout           ;
+; |DDPB|WCLKCOU[1]     ; |DDPB|WCLKCOU[1]     ; regout           ;
+; |DDPB|WCLKCOU[0]     ; |DDPB|WCLKCOU[0]     ; regout           ;
+; |DDPB|WCLKCOU[2]     ; |DDPB|WCLKCOU[2]     ; regout           ;
+; |DDPB|LessThan0~0    ; |DDPB|LessThan0~0    ; combout          ;
+; |DDPB|WCLKCOU[4]     ; |DDPB|WCLKCOU[4]     ; regout           ;
+; |DDPB|LessThan0~1    ; |DDPB|LessThan0~1    ; combout          ;
+; |DDPB|T60S           ; |DDPB|T60S           ; regout           ;
+; |DDPB|WCLKCOU[0]~16  ; |DDPB|WCLKCOU[0]~16  ; combout          ;
+; |DDPB|WCLKCOU[0]~16  ; |DDPB|WCLKCOU[0]~17  ; cout             ;
+; |DDPB|WCLKCOU[1]~18  ; |DDPB|WCLKCOU[1]~18  ; combout          ;
+; |DDPB|WCLKCOU[1]~18  ; |DDPB|WCLKCOU[1]~19  ; cout             ;
+; |DDPB|WCLKCOU[2]~20  ; |DDPB|WCLKCOU[2]~20  ; combout          ;
+; |DDPB|WCLKCOU[2]~20  ; |DDPB|WCLKCOU[2]~21  ; cout             ;
+; |DDPB|WCLKCOU[3]~22  ; |DDPB|WCLKCOU[3]~22  ; combout          ;
+; |DDPB|WCLKCOU[3]~22  ; |DDPB|WCLKCOU[3]~23  ; cout             ;
+; |DDPB|WCLKCOU[4]~24  ; |DDPB|WCLKCOU[4]~24  ; combout          ;
+; |DDPB|WCLKCOU[4]~24  ; |DDPB|WCLKCOU[4]~25  ; cout             ;
+; |DDPB|WCLKCOU[5]~26  ; |DDPB|WCLKCOU[5]~26  ; combout          ;
+; |DDPB|CNT60[5]       ; |DDPB|CNT60[5]       ; regout           ;
+; |DDPB|CNT60[4]       ; |DDPB|CNT60[4]       ; regout           ;
+; |DDPB|CNT60[3]       ; |DDPB|CNT60[3]       ; regout           ;
+; |DDPB|CNT60[2]       ; |DDPB|CNT60[2]       ; regout           ;
+; |DDPB|CNT60[1]       ; |DDPB|CNT60[1]       ; regout           ;
+; |DDPB|CNT60[0]       ; |DDPB|CNT60[0]       ; regout           ;
+; |DDPB|Equal0~1       ; |DDPB|Equal0~1       ; combout          ;
+; |DDPB|Equal0~2       ; |DDPB|Equal0~2       ; combout          ;
+; |DDPB|Add0~0         ; |DDPB|Add0~0         ; combout          ;
+; |DDPB|Add0~0         ; |DDPB|Add0~1         ; cout             ;
+; |DDPB|Add0~2         ; |DDPB|Add0~2         ; combout          ;
+; |DDPB|Add0~2         ; |DDPB|Add0~3         ; cout             ;
+; |DDPB|Add0~4         ; |DDPB|Add0~4         ; combout          ;
+; |DDPB|Add0~4         ; |DDPB|Add0~5         ; cout             ;
+; |DDPB|Add0~6         ; |DDPB|Add0~6         ; combout          ;
+; |DDPB|Add0~6         ; |DDPB|Add0~7         ; cout             ;
+; |DDPB|Add0~8         ; |DDPB|Add0~8         ; combout          ;
+; |DDPB|Add0~8         ; |DDPB|Add0~9         ; cout             ;
+; |DDPB|Add0~10        ; |DDPB|Add0~10        ; combout          ;
+; |DDPB|Add0~10        ; |DDPB|Add0~11        ; cout             ;
+; |DDPB|Add0~12        ; |DDPB|Add0~12        ; combout          ;
+; |DDPB|CNT60~8        ; |DDPB|CNT60~8        ; combout          ;
+; |DDPB|CNT60~9        ; |DDPB|CNT60~9        ; combout          ;
+; |DDPB|CNT60~10       ; |DDPB|CNT60~10       ; combout          ;
+; |DDPB|CNT60~11       ; |DDPB|CNT60~11       ; combout          ;
+; |DDPB|CNT60~12       ; |DDPB|CNT60~12       ; combout          ;
+; |DDPB|CNT60~13       ; |DDPB|CNT60~13       ; combout          ;
+; |DDPB|WCLK           ; |DDPB|WCLK~corein    ; combout          ;
+; |DDPB|CLK1HZ         ; |DDPB|CLK1HZ~corein  ; combout          ;
+; |DDPB|WCLK~clkctrl   ; |DDPB|WCLK~clkctrl   ; outclk           ;
+; |DDPB|CLK1HZ~clkctrl ; |DDPB|CLK1HZ~clkctrl ; outclk           ;
++----------------------+----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------+
+; Missing 1-Value Coverage                                     ;
++---------------------+---------------------+------------------+
+; Node Name           ; Output Port Name    ; Output Port Type ;
++---------------------+---------------------+------------------+
+; |DDPB|WCLKCOU[6]    ; |DDPB|WCLKCOU[6]    ; regout           ;
+; |DDPB|WCLKCOU[7]    ; |DDPB|WCLKCOU[7]    ; regout           ;
+; |DDPB|WCLKCOU[5]    ; |DDPB|WCLKCOU[5]    ; regout           ;
+; |DDPB|LessThan0~2   ; |DDPB|LessThan0~2   ; combout          ;
+; |DDPB|WCLKCOU[5]~26 ; |DDPB|WCLKCOU[5]~27 ; cout             ;
+; |DDPB|WCLKCOU[6]~28 ; |DDPB|WCLKCOU[6]~28 ; combout          ;
+; |DDPB|WCLKCOU[6]~28 ; |DDPB|WCLKCOU[6]~29 ; cout             ;
+; |DDPB|WCLKCOU[7]~30 ; |DDPB|WCLKCOU[7]~30 ; combout          ;
+; |DDPB|CNT60[7]      ; |DDPB|CNT60[7]      ; regout           ;
+; |DDPB|CNT60[6]      ; |DDPB|CNT60[6]      ; regout           ;
+; |DDPB|Equal0~0      ; |DDPB|Equal0~0      ; combout          ;
+; |DDPB|Add0~12       ; |DDPB|Add0~13       ; cout             ;
+; |DDPB|Add0~14       ; |DDPB|Add0~14       ; combout          ;
+; |DDPB|START         ; |DDPB|START~corein  ; combout          ;
+; |DDPB|START~clkctrl ; |DDPB|START~clkctrl ; outclk           ;
++---------------------+---------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------+
+; Missing 0-Value Coverage                                     ;
++---------------------+---------------------+------------------+
+; Node Name           ; Output Port Name    ; Output Port Type ;
++---------------------+---------------------+------------------+
+; |DDPB|DDBZ~reg0     ; |DDPB|DDBZ~reg0     ; regout           ;
+; |DDPB|WCLKCOU[6]    ; |DDPB|WCLKCOU[6]    ; regout           ;
+; |DDPB|WCLKCOU[7]    ; |DDPB|WCLKCOU[7]    ; regout           ;
+; |DDPB|WCLKCOU[5]    ; |DDPB|WCLKCOU[5]    ; regout           ;
+; |DDPB|LessThan0~2   ; |DDPB|LessThan0~2   ; combout          ;
+; |DDPB|WCLKCOU[5]~26 ; |DDPB|WCLKCOU[5]~27 ; cout             ;
+; |DDPB|WCLKCOU[6]~28 ; |DDPB|WCLKCOU[6]~28 ; combout          ;
+; |DDPB|WCLKCOU[6]~28 ; |DDPB|WCLKCOU[6]~29 ; cout             ;
+; |DDPB|WCLKCOU[7]~30 ; |DDPB|WCLKCOU[7]~30 ; combout          ;
+; |DDPB|CNT60[7]      ; |DDPB|CNT60[7]      ; regout           ;
+; |DDPB|CNT60[6]      ; |DDPB|CNT60[6]      ; regout           ;
+; |DDPB|Equal0~0      ; |DDPB|Equal0~0      ; combout          ;
+; |DDPB|Add0~12       ; |DDPB|Add0~13       ; cout             ;
+; |DDPB|Add0~14       ; |DDPB|Add0~14       ; combout          ;
+; |DDPB|DDBZ          ; |DDPB|DDBZ          ; padio            ;
++---------------------+---------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Jul 15 21:31:24 2020
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off DDPB -c DDPB
+Info: Using vector source file "C:/Users/席卓然/Desktop/出租车计价器/DDPB.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      74.63 %
+Info: Number of transitions in simulation is 2181
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 189 megabytes
+    Info: Processing ended: Wed Jul 15 21:31:25 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

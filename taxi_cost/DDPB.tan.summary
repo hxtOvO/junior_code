@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.209 ns
+From           : DDBZ~reg0
+To             : DDBZ
+From Clock     : CLK1HZ
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK1HZ'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 314.66 MHz ( period = 3.178 ns )
+From           : CNT60[0]
+To             : CNT60[3]
+From Clock     : CLK1HZ
+To Clock       : CLK1HZ
+Failed Paths   : 0
+
+Type           : Clock Setup: 'WCLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 340.02 MHz ( period = 2.941 ns )
+From           : WCLKCOU[0]
+To             : WCLKCOU[7]
+From Clock     : WCLK
+To Clock       : WCLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

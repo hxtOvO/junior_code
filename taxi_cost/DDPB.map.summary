@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jul 15 21:28:00 2020
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : DDPB
+Top-level Entity Name : DDPB
+Family : Cyclone II
+Total logic elements : 28
+    Total combinational functions : 28
+    Dedicated logic registers : 18
+Total registers : 18
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
